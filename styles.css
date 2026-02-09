@@ -188,9 +188,9 @@ body {
 }
 
 .hero h1 {
-  font-size: clamp(42px, 6vw, 72px);
+  font-size: clamp(42px, 6vw, 60px);
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.0;
   margin-bottom: 24px;
 }
 
@@ -210,11 +210,12 @@ body {
 
 /* ✅ PORTRAIT IMAGE — THIS WILL NOW APPLY */
 .hero-image img {
-  width: 260px;
+  width:400px;
   height: auto;
-  object-fit: cover;
-  border-radius: 18px;
-  background: #111;
+  object-fit: contain;          /* important for PNG */
+  background: transparent;      /* ✅ remove shade */
+  box-shadow: none;    
+  filter: drop-shadow(0 20px 40px rgba(139, 92, 246, 0.25));
 }
 
 /* MOBILE */
