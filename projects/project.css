@@ -44,7 +44,18 @@ body {
   z-index: 100;
   background: rgba(11, 11, 13, 0.7);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(220, 38, 38, 0.15);
+}
+
+.theme-grid .project-nav {
+  border-bottom: 1px solid rgba(220, 38, 38, 0.25);
+}
+
+.theme-solaramps .project-nav {
+  border-bottom: 1px solid rgba(20, 184, 166, 0.25);
+}
+
+.theme-medicra .project-nav {
+  border-bottom: 1px solid rgba(59, 130, 246, 0.25);
 }
 
 .project-nav-inner {
@@ -271,7 +282,55 @@ body {
   );
 }
 
+/* ===================== */
+/* SOLARAMPS – DARK TEAL THEME */
+/* ===================== */
+.theme-solaramps {
+  background:
+    radial-gradient(
+      1400px circle at 50% -20%,
+      rgba(20, 184, 166, 0.18),   /* deep teal glow */
+      rgba(11, 11, 13, 0.95) 55%
+    ),
+    linear-gradient(
+      180deg,
+      #0b0b0d 0%,
+      #050a0a 100%              /* subtle teal-black base */
+    );
+}
 
+.theme-solaramps .project-section {
+  background: linear-gradient(
+    180deg,
+    rgba(20, 184, 166, 0.03),
+    transparent 70%
+  );
+}
+
+/* ===================== */
+/* MEDICRA365 – DARK BLUE THEME */
+/* ===================== */
+.theme-medicra {
+  background:
+    radial-gradient(
+      1400px circle at 50% -20%,
+      rgba(59, 130, 246, 0.18),   /* deep healthcare blue glow */
+      rgba(11, 11, 13, 0.95) 55%
+    ),
+    linear-gradient(
+      180deg,
+      #0b0b0d 0%,
+      #05080f 100%              /* subtle blue-black base */
+    );
+}
+
+.theme-medicra .project-section {
+  background: linear-gradient(
+    180deg,
+    rgba(59, 130, 246, 0.03),
+    transparent 70%
+  );
+}
 
 /* ===================== */
 /* RESPONSIVE */
@@ -294,3 +353,80 @@ body {
     gap: 16px;
   }
 }
+
+@media (max-width: 768px) {
+  .project-image-block {
+    margin: 56px 0;
+  }
+
+  .project-image {
+    margin: 24px 0;
+  }
+}
+
+
+/* ===================== */
+/* PROJECT MEDIA BLOCK */
+/* ===================== */
+.project-media-block {
+  margin: 120px 0;
+}
+
+/* Text above image */
+.project-media-text {
+  max-width: 720px;
+  margin-bottom: 32px;
+}
+
+.project-media-text h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 1px;
+  color: var(--fg);
+}
+
+.project-media-text p {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 0.5;
+}
+
+/* ===================== */
+/* PROJECT IMAGE BLOCK */
+/* ===================== */
+.project-image-block {
+  margin: 80px 0;            /* was 140px */
+}
+
+/* Text aligned with page content */
+.project-image-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 4px;        /* tighter title → description */
+}
+
+.project-image-desc {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 720px;
+  margin-bottom: 24px;       /* was 40px */
+}
+
+/* Image wrapper spacing */
+.project-image {
+  margin: 36px 0;            /* was much larger implicitly */
+}
+
+/* Image stays full-width like cover */
+.project-image img {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 18px;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.55);
+}
+
+
+
+
