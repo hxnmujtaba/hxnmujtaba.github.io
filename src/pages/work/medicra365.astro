@@ -1,0 +1,508 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import { siteConfig } from '../../config/site';
+import coverImage from '../../assets/images/case-studies/medicra365-cover.png';
+import research1 from '../../assets/images/case-studies/medicra-1.png';
+import research2 from '../../assets/images/case-studies/medicra-2.png';
+import research3 from '../../assets/images/case-studies/medicra-3.png';
+import research4 from '../../assets/images/case-studies/medicra-4.png';
+import competitor1 from '../../assets/images/case-studies/medicra-5.png';
+import competitor2 from '../../assets/images/case-studies/medicra-6.png';
+import competitor3 from '../../assets/images/case-studies/medicra-7.png';
+import guideline1 from '../../assets/images/case-studies/medicra-8.png';
+import guideline2 from '../../assets/images/case-studies/medicra-9.png';
+import guideline3 from '../../assets/images/case-studies/medicra-10.png';
+import guideline4 from '../../assets/images/case-studies/medicra-11.png';
+import web1 from '../../assets/images/case-studies/medicra-web-1.png';
+import web2 from '../../assets/images/case-studies/medicra-web-2.png';
+import web3 from '../../assets/images/case-studies/medicra-web-3.png';
+import web4 from '../../assets/images/case-studies/medicra-web-4.png';
+import web5 from '../../assets/images/case-studies/medicra-web-5.png';
+import web6 from '../../assets/images/case-studies/medicra-web-6.png';
+import web7 from '../../assets/images/case-studies/medicra-web-7.png';
+import web8 from '../../assets/images/case-studies/medicra-web-8.png';
+import mobile1 from '../../assets/images/case-studies/medicra-mobile-1.png';
+import mobile2 from '../../assets/images/case-studies/medicra-mobile-2.png';
+import mobile3 from '../../assets/images/case-studies/medicra-mobile-3.png';
+import mobile4 from '../../assets/images/case-studies/medicra-mobile-4.png';
+import mobile5 from '../../assets/images/case-studies/medicra-mobile-5.png';
+
+const highlights = [
+	{ label: 'Role', value: 'Lead Product Designer' },
+	{ label: 'Domain', value: 'Healthcare / Patient Management' },
+	{ label: 'Platform', value: 'Web & Mobile' },
+];
+
+const features = [
+	'Smart Appointment Scheduling',
+	'Doctor Dashboard',
+	'Virtual Consultations',
+	'Medical Notes & History',
+];
+
+const responsibilities = [
+	'Review the requirements of the design challenge',
+	'Define user personas and flows',
+	'Competitor analysis',
+	'Identify opportunities for improvement',
+	'Hand-sketch web dashboard & mobile application screens',
+	'Create product designs for web dashboard & mobile application',
+	'Present findings & final design',
+];
+
+const challenges = [
+	'Ensuring cohesive navigation across multiple modules',
+	'Designing data-dense dashboards that present complex information clearly',
+	'Integrating workflow automation for notifications, approvals, and task assignments',
+	'Addressing the needs of diverse personas across web and mobile',
+];
+
+const outcomes = [
+	'Increased visibility into patient status and consultation history for faster clinical decisions',
+	'Reduced design iteration time by 25% using AI-assisted workflows',
+	'Delivered the full product design independently, accelerating the project timeline by 20%',
+];
+
+const research = [
+	{ img: research1, alt: 'Target Audience' },
+	{ img: research2, alt: 'Objective, Research Methods and Interview Questions' },
+	{ img: research3, alt: 'Interview Insights' },
+	{ img: research4, alt: 'Key Findings & Design Implications' },
+];
+
+const competitor = [
+	{ img: competitor1, alt: 'Competitor Analysis Introduction' },
+	{ img: competitor2, alt: 'Competitor Analysis Feature Comparison' },
+	{ img: competitor3, alt: 'Competitor Analysis Opportunity Areas' },
+];
+
+const guidelines = [
+	{ img: guideline1, alt: 'Design Guideline Introduction' },
+	{ img: guideline2, alt: 'Typography & Colors' },
+	{ img: guideline3, alt: 'Design Components' },
+	{ img: guideline4, alt: 'Brand Logo & Assumptions' },
+];
+
+const webShots = [web1, web2, web3, web4, web5, web6, web7, web8];
+const mobileShots = [mobile1, mobile2, mobile3, mobile4, mobile5];
+
+const caseStudyUrl = new URL('/work/medicra365', siteConfig.siteUrl).toString();
+const caseStudySchema = [
+	{
+		'@context': 'https://schema.org',
+		'@type': 'BreadcrumbList',
+		itemListElement: [
+			{ '@type': 'ListItem', position: 1, name: 'Home', item: siteConfig.siteUrl },
+			{ '@type': 'ListItem', position: 2, name: 'Work', item: new URL('/work', siteConfig.siteUrl).toString() },
+			{ '@type': 'ListItem', position: 3, name: 'Medicra365 Case Study', item: caseStudyUrl },
+		],
+	},
+	{
+		'@context': 'https://schema.org',
+		'@type': 'CreativeWork',
+		name: 'Medicra365 Case Study',
+		headline: 'Medicra365 — Intelligent Medical Record System',
+		description:
+			'Medicra365 is a smart practice management platform that helps doctors manage appointments, patient records, and consultations across web and mobile.',
+		url: caseStudyUrl,
+		author: { '@type': 'Person', name: siteConfig.authorName },
+		isPartOf: { '@type': 'WebSite', name: siteConfig.name, url: siteConfig.siteUrl },
+		inLanguage: siteConfig.locale,
+	},
+];
+---
+
+<Layout
+	title="Medicra365 Case Study | Hassan Mujtaba"
+	description="Medicra365 — a smart practice management platform that helps doctors manage appointments, patient records, and consultations across web and mobile."
+	ogType="article"
+	ogImageAlt="Medicra365 healthcare platform preview"
+	schema={caseStudySchema}
+>
+	<a class="skip-link" href="#main-content">Skip to content</a>
+
+	<div class="case-page">
+		<SiteHeader />
+
+		<main id="main-content">
+			<section class="case-hero">
+				<p class="eyebrow">
+					<a class="breadcrumb-link" href="/work">Case Study</a>
+					<span class="breadcrumb-separator" aria-hidden="true">/</span>
+					<span>Medicra365</span>
+				</p>
+				<h1 class="display-title">Medicra365 — Intelligent Medical Record System</h1>
+				<div class="hero-subgrid">
+					<p class="hero-text">
+						A smart practice management platform that helps doctors effortlessly manage
+						appointments, patient records, and consultations — streamlining workflow so clinicians
+						can focus more on delivering quality care.
+					</p>
+				</div>
+			</section>
+
+			<section class="meta-strip" id="overview">
+				{highlights.map((item) => (
+					<div class="meta-item">
+						<p class="meta-label">{item.label}</p>
+						<p class="meta-value">{item.value}</p>
+					</div>
+				))}
+			</section>
+
+			<section class="lead-image-section">
+				<Image class="lead-image" src={coverImage} alt="Medicra365 cover" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+			</section>
+
+			<section class="summary-section">
+				<p class="section-kicker">Overview</p>
+				<h2>Turning fragmented patient records into a streamlined clinical workflow.</h2>
+				<div class="summary-main">
+					<p>
+						Medicra365 is a smart practice management platform that helps doctors effortlessly
+						manage appointments, patient records, and consultations. It streamlines the clinical
+						workflow so doctors save time and focus more on delivering quality care.
+					</p>
+					<p><strong>Features include:</strong></p>
+					<ul class="outcome-list">
+						{features.map((item) => <li>{item}</li>)}
+					</ul>
+				</div>
+			</section>
+
+			<section class="editorial-section editorial-section-no-divider" id="responsibilities">
+				<div class="section-rail">
+					<p class="section-kicker">My Responsibilities</p>
+				</div>
+				<div class="story-block">
+					<ul class="outcome-list">
+						{responsibilities.map((item) => <li>{item}</li>)}
+					</ul>
+				</div>
+			</section>
+
+			<section class="editorial-section" id="challenges">
+				<div class="section-rail">
+					<p class="section-kicker">UX Challenges</p>
+				</div>
+				<div class="story-block">
+					<p>The project presented several UX challenges:</p>
+					<ul class="outcome-list">
+						{challenges.map((item) => <li>{item}</li>)}
+					</ul>
+				</div>
+			</section>
+
+			<section class="editorial-section" id="ai">
+				<div class="section-rail">
+					<p class="section-kicker">AI-Assisted Design & Intelligence</p>
+				</div>
+				<div class="story-block">
+					<p>
+						I leveraged AI-assisted design workflows to accelerate delivery and improve
+						decision-making across the product lifecycle: AI-assisted wireframing and layout
+						exploration for rapid UI ideation, AI-supported usability testing analysis to extract
+						insights efficiently, and AI-generated design documentation and assets for faster
+						developer handoff.
+					</p>
+				</div>
+			</section>
+
+			<section class="editorial-section" id="outcome">
+				<div class="section-rail">
+					<p class="section-kicker">Impact</p>
+				</div>
+				<div class="story-block">
+					<ul class="outcome-list">
+						{outcomes.map((item) => <li>{item}</li>)}
+					</ul>
+					<p class="closing-text"><strong>Tools Used:</strong> Figma · Adobe Creative Suite · Balsamiq · ChatGPT · Whimsical</p>
+				</div>
+			</section>
+
+			<section class="editorial-section" id="research">
+				<div class="section-rail">
+					<p class="section-kicker">Research</p>
+				</div>
+				<div class="story-block">
+					<div class="gallery-grid">
+						{research.map((item) => (
+							<Image class="gallery-image" src={item.img} alt={item.alt} loading="lazy" decoding="async" widths={[480, 720, 960]} sizes="(max-width: 860px) 100vw, 50vw" />
+						))}
+					</div>
+				</div>
+			</section>
+
+			<section class="editorial-section" id="competitor-analysis">
+				<div class="section-rail">
+					<p class="section-kicker">Competitor Analysis</p>
+				</div>
+				<div class="story-block">
+					<div class="gallery-grid">
+						{competitor.map((item) => (
+							<Image class="gallery-image" src={item.img} alt={item.alt} loading="lazy" decoding="async" widths={[480, 720, 960]} sizes="(max-width: 860px) 100vw, 50vw" />
+						))}
+					</div>
+				</div>
+			</section>
+
+			<section class="editorial-section" id="design-guidelines">
+				<div class="section-rail">
+					<p class="section-kicker">Design Guidelines</p>
+				</div>
+				<div class="story-block">
+					<div class="gallery-grid">
+						{guidelines.map((item) => (
+							<Image class="gallery-image" src={item.img} alt={item.alt} loading="lazy" decoding="async" widths={[480, 720, 960]} sizes="(max-width: 860px) 100vw, 50vw" />
+						))}
+					</div>
+				</div>
+			</section>
+
+			<section class="editorial-section" id="web-interface">
+				<div class="section-rail">
+					<p class="section-kicker">Web UI Interface</p>
+				</div>
+				<div class="story-block">
+					<div class="gallery-grid">
+						{webShots.map((img, i) => (
+							<Image class="gallery-image" src={img} alt={`Medicra365 web interface ${i + 1}`} loading="lazy" decoding="async" widths={[480, 720, 960]} sizes="(max-width: 860px) 100vw, 50vw" />
+						))}
+					</div>
+				</div>
+			</section>
+
+			<section class="editorial-section" id="mobile-interface">
+				<div class="section-rail">
+					<p class="section-kicker">Mobile UI Interface</p>
+				</div>
+				<div class="story-block">
+					<div class="gallery-grid">
+						{mobileShots.map((img, i) => (
+							<Image class="gallery-image" src={img} alt={`Medicra365 mobile interface ${i + 1}`} loading="lazy" decoding="async" widths={[480, 720, 960]} sizes="(max-width: 860px) 100vw, 50vw" />
+						))}
+					</div>
+				</div>
+			</section>
+		</main>
+	</div>
+</Layout>
+
+<style>
+	.case-page {
+		position: relative;
+		width: min(calc(100% - 3rem), 78rem);
+		margin: 0 auto;
+		padding: 1.25rem 0 5rem;
+	}
+
+	.eyebrow,
+	.meta-label,
+	.section-kicker {
+		font-family: var(--font-mono);
+		font-size: 0.82rem;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		line-height: 1.4;
+		text-transform: uppercase;
+	}
+
+	.eyebrow a {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.1rem 0;
+		color: var(--foreground);
+		text-decoration: none;
+		transition: opacity 120ms ease;
+	}
+
+	.eyebrow a:hover,
+	.eyebrow a:focus-visible {
+		opacity: 0.68;
+	}
+
+	.case-hero {
+		padding: 6rem 0 4rem;
+	}
+
+	.eyebrow,
+	.meta-label,
+	.section-kicker {
+		margin: 0;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 0.55rem;
+		margin-bottom: 1.1rem;
+		color: var(--muted-foreground);
+		font-style: normal;
+	}
+
+	.breadcrumb-link {
+		font-weight: 600;
+	}
+
+	.breadcrumb-separator {
+		color: var(--muted-foreground);
+	}
+
+	h1,
+	h2 {
+		margin: 0;
+		font-weight: 800;
+		letter-spacing: -0.05em;
+		color: var(--foreground);
+	}
+
+	.hero-subgrid {
+		display: grid;
+		grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+		gap: 2rem;
+		margin-top: 1.75rem;
+	}
+
+	.hero-text,
+	.summary-main p,
+	.story-block p,
+	.outcome-list li,
+	.closing-text {
+		font-size: 1.08rem;
+		line-height: 1.7;
+	}
+
+	.hero-text,
+	.summary-main p,
+	.story-block p,
+	.closing-text {
+		margin: 0;
+	}
+
+	.closing-text {
+		color: var(--muted-foreground);
+	}
+
+	.meta-strip {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 2rem;
+		padding: 1.5rem 0 0.5rem;
+		border-top: 1px solid var(--border);
+	}
+
+	.meta-item {
+		padding-top: 0.75rem;
+	}
+
+	.meta-value {
+		margin: 0.35rem 0 0;
+		font-size: 1.15rem;
+		font-weight: 700;
+	}
+
+	.lead-image-section {
+		padding: 2rem 0 4rem;
+	}
+
+	.lead-image,
+	.gallery-image {
+		width: 100%;
+		border: 1px solid var(--border);
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-large);
+	}
+
+	.gallery-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1.25rem;
+	}
+
+	.summary-section {
+		padding: 0 0 3rem;
+		border-bottom: 1px solid var(--border);
+	}
+
+	.summary-section h2 {
+		margin-top: 0.75rem;
+		font-size: clamp(2rem, 3vw, 3rem);
+		line-height: 1.04;
+	}
+
+	.summary-main {
+		display: grid;
+		gap: 1rem;
+		margin-top: 1.5rem;
+	}
+
+	.editorial-section {
+		display: grid;
+		grid-template-columns: 16rem minmax(0, 1fr);
+		gap: 2rem;
+		padding: 2.5rem 0;
+		border-bottom: 1px solid var(--border);
+	}
+
+	.editorial-section-no-divider {
+		border-bottom: 0;
+		padding-bottom: 0;
+	}
+
+	.section-rail {
+		align-self: start;
+	}
+
+	.story-block {
+		display: grid;
+		gap: 1rem;
+		max-width: 52rem;
+		margin-top: 0;
+	}
+
+	.outcome-list {
+		margin: 0;
+		padding-left: 1.25rem;
+		list-style: disc;
+		display: grid;
+		gap: 0.4rem;
+	}
+
+	.outcome-list li::marker {
+		color: var(--foreground);
+	}
+
+	@media (max-width: 980px) {
+		.hero-subgrid,
+		.meta-strip {
+			grid-template-columns: 1fr;
+		}
+
+		.gallery-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 720px) {
+		.case-page {
+			width: min(calc(100% - 1.5rem), 78rem);
+			padding-top: 1rem;
+		}
+
+		.editorial-section {
+			grid-template-columns: 1fr;
+		}
+
+		.case-hero {
+			padding: 4rem 0 3rem;
+		}
+
+		.hero-text,
+		.summary-main p,
+		.story-block p,
+		.outcome-list li,
+		.closing-text {
+			font-size: 1.05rem;
+		}
+	}
+</style>

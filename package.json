@@ -1,22 +1,19 @@
 {
-  "name": "maria-astro-theme",
-  "description": "A clean Astro portfolio theme for UX designers and product designers.",
+  "name": "hxnmujtaba-portfolio",
+  "description": "Personal portfolio of Hassan Mujtaba - Product Designer.",
   "type": "module",
-  "version": "1.0.2",
-  "author": "Andrei Alba",
+  "version": "1.0.0",
+  "author": "Hassan Mujtaba",
   "license": "MIT",
   "keywords": [
-    "astro-theme",
-    "astro",
     "portfolio",
-    "ux",
-    "designer",
-    "tailwindcss"
+    "product-design",
+    "ux"
   ],
-  "homepage": "https://maria-lake.vercel.app/",
+  "homepage": "https://hxnmujtaba.com/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/andreialba/maria.git"
+    "url": "https://github.com/hxnmujtaba/hxnmujtaba.github.io.git"
   },
   "engines": {
     "node": ">=22.12.0"

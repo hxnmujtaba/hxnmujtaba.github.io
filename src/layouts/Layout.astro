@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import SiteFooter from '../components/SiteFooter.astro';
+import Lightbox from '../components/Lightbox.astro';
 import { siteConfig } from '../config/site';
 
 const {
@@ -101,6 +102,7 @@ const schemaData =
 	<body>
 		<slot />
 		<SiteFooter showCta={showFooterCta} />
+		<Lightbox />
 		<script src="/cookie-consent.js" defer></script>
 		<script is:inline>
 			(() => {

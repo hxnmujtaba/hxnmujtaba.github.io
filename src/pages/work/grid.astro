@@ -1,0 +1,473 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import { siteConfig } from '../../config/site';
+import coverImage from '../../assets/images/case-studies/grid-cover.png';
+import controlCenter1 from '../../assets/images/case-studies/grid-1.png';
+import controlCenter2 from '../../assets/images/case-studies/grid-2.png';
+import assetTracking from '../../assets/images/case-studies/grid-3.png';
+import unifiedComms from '../../assets/images/case-studies/grid-4.png';
+import worldEvents from '../../assets/images/case-studies/grid-5.png';
+import destinationReports from '../../assets/images/case-studies/grid-6.png';
+
+const highlights = [
+	{ label: 'Role', value: 'Lead Product Designer' },
+	{ label: 'Domain', value: 'Enterprise Intelligence & Risk' },
+	{ label: 'Platform', value: 'Web Control Center' },
+];
+
+const responsibilities = [
+	'Brainstorming with the Product Manager and Vice President on feature strategy and roadmap',
+	'Proposing new features and workflows based on requirements and data',
+	'Conducting cross-departmental workshops with Intelligence, Operations, Sales, and Marketing teams',
+	'Performing a UI/UX audit of the existing GRID system to identify usability gaps',
+	'Defining UX architecture and system structure',
+	'Designing high-fidelity user interfaces',
+	'Conducting usability testing and iteration',
+	'Presenting designs to board members and stakeholders',
+	'Design handoff and collaboration with development teams',
+];
+
+const challenges = [
+	'Designing data-dense, real-time dashboards without overwhelming users',
+	'Creating role-specific experiences for enterprise admins, account POCs, and individual users',
+	'Synthesizing world events, travel analytics, and actionable insights into understandable visualizations',
+	'Designing alert and notification workflows for urgent communication',
+	'Managing multi-layered navigation for enterprise and individual monitoring',
+];
+
+const outcomes = [
+	'Increased visibility and situational awareness of travelers and assets globally',
+	'Accelerated design delivery by 25% through AI-assisted workflows',
+	'Improved usability of multi-role dashboards, enabling faster enterprise adoption',
+];
+
+const caseStudyUrl = new URL('/work/grid', siteConfig.siteUrl).toString();
+const caseStudySchema = [
+	{
+		'@context': 'https://schema.org',
+		'@type': 'BreadcrumbList',
+		itemListElement: [
+			{ '@type': 'ListItem', position: 1, name: 'Home', item: siteConfig.siteUrl },
+			{ '@type': 'ListItem', position: 2, name: 'Work', item: new URL('/work', siteConfig.siteUrl).toString() },
+			{ '@type': 'ListItem', position: 3, name: 'GRID Case Study', item: caseStudyUrl },
+		],
+	},
+	{
+		'@context': 'https://schema.org',
+		'@type': 'CreativeWork',
+		name: 'GRID Case Study',
+		headline: 'GRID — Intelligence Delivery Platform',
+		description:
+			'GRID is a powerful intelligence delivery SaaS platform enabling real-time visibility, situational awareness, and operational control across global environments.',
+		url: caseStudyUrl,
+		author: { '@type': 'Person', name: siteConfig.authorName },
+		isPartOf: { '@type': 'WebSite', name: siteConfig.name, url: siteConfig.siteUrl },
+		inLanguage: siteConfig.locale,
+	},
+];
+---
+
+<Layout
+	title="GRID Case Study | Hassan Mujtaba"
+	description="GRID — an enterprise intelligence delivery & control platform enabling real-time visibility, situational awareness, and operational control across global environments."
+	ogType="article"
+	ogImageAlt="GRID control center dashboard preview"
+	schema={caseStudySchema}
+>
+	<a class="skip-link" href="#main-content">Skip to content</a>
+
+	<div class="case-page">
+		<SiteHeader />
+
+		<main id="main-content">
+			<section class="case-hero">
+				<p class="eyebrow">
+					<a class="breadcrumb-link" href="/work">Case Study</a>
+					<span class="breadcrumb-separator" aria-hidden="true">/</span>
+					<span>GRID</span>
+				</p>
+				<h1 class="display-title">GRID — Intelligence Delivery Platform</h1>
+				<div class="hero-subgrid">
+					<p class="hero-text">
+						GRID is a powerful intelligence delivery SaaS platform designed for enterprise and
+						individual consumers, enabling real-time visibility, situational awareness, and
+						operational control across global environments.
+					</p>
+				</div>
+			</section>
+
+			<section class="meta-strip" id="overview">
+				{highlights.map((item) => (
+					<div class="meta-item">
+						<p class="meta-label">{item.label}</p>
+						<p class="meta-value">{item.value}</p>
+					</div>
+				))}
+			</section>
+
+			<section class="lead-image-section">
+				<Image
+					class="lead-image"
+					src={coverImage}
+					alt="GRID control center overview"
+					decoding="async"
+					widths={[720, 1080, 1440]}
+					sizes="(max-width: 78rem) 100vw, 78rem"
+				/>
+			</section>
+
+			<section class="summary-section">
+				<p class="section-kicker">Overview</p>
+				<h2>Consolidating global travel, risk, and asset visibility into one control center.</h2>
+				<div class="summary-main">
+					<p>
+						GRID offers a comprehensive suite of services including Employee & Asset Tracking, a
+						centralized Control Center, Travel Data Management & Analysis, World Events Analysis,
+						Enterprise Customer Management, Unified Communication, and Mass Communication.
+					</p>
+					<p>
+						The platform empowers enterprise admins and account Points of Contact (POCs) to track
+						and manage travelers and assets worldwide, ensuring real-time insights and control
+						during critical operations — even during travel.
+					</p>
+				</div>
+			</section>
+
+			<section class="editorial-section editorial-section-no-divider" id="responsibilities">
+				<div class="section-rail">
+					<p class="section-kicker">My Responsibilities</p>
+				</div>
+				<div class="story-block">
+					<p>
+						I led the end-to-end design of GRID, working closely with cross-functional teams to
+						define strategy, architecture, and execution for a complex, real-time enterprise
+						platform.
+					</p>
+					<ul class="outcome-list">
+						{responsibilities.map((item) => <li>{item}</li>)}
+					</ul>
+				</div>
+			</section>
+
+			<section class="editorial-section" id="challenges">
+				<div class="section-rail">
+					<p class="section-kicker">UX Challenges</p>
+				</div>
+				<div class="story-block">
+					<p>GRID presented several complex UX challenges inherent to real-time, mission-critical systems:</p>
+					<ul class="outcome-list">
+						{challenges.map((item) => <li>{item}</li>)}
+					</ul>
+					<p>Additionally, ensuring traveler safety revealed key gaps in the existing experience:</p>
+					<ul class="outcome-list">
+						<li>No consolidated view to track all travelers at once</li>
+						<li>No visibility into communication history with travelers</li>
+						<li>Difficulty locating impacted travelers' coordinates</li>
+						<li>Poor interpretability of travel data provided by TMCs</li>
+						<li>No visual representation of traveler routes over time</li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="editorial-section" id="ai">
+				<div class="section-rail">
+					<p class="section-kicker">AI-Assisted Design & Intelligence</p>
+				</div>
+				<div class="story-block">
+					<p>
+						I leveraged AI-assisted design workflows to accelerate delivery and improve
+						decision-making across the product lifecycle: AI-assisted ideation and layout
+						exploration for dashboard-heavy modules, AI-supported usability analysis to identify
+						real-time monitoring pain points, and AI-generated design documentation, assets, and
+						prototypes for faster developer handoff.
+					</p>
+					<p>
+						GRID also integrated AI-powered product features, including predictive alerts based on
+						travel patterns and world events, and intelligent summarization for control center
+						dashboards.
+					</p>
+				</div>
+			</section>
+
+			<section class="editorial-section" id="outcome">
+				<div class="section-rail">
+					<p class="section-kicker">Impact</p>
+				</div>
+				<div class="story-block">
+					<ul class="outcome-list">
+						{outcomes.map((item) => <li>{item}</li>)}
+					</ul>
+					<p class="closing-text"><strong>Tools Used:</strong> Figma · Adobe Creative Suite · LottieFiles</p>
+				</div>
+			</section>
+
+			<section class="editorial-section" id="control-center">
+				<div class="section-rail">
+					<p class="section-kicker">Control Center</p>
+				</div>
+				<div class="story-block">
+					<div class="gallery-grid">
+						<Image class="gallery-image" src={controlCenter1} alt="GRID Control Center" loading="lazy" decoding="async" widths={[480, 720, 960]} sizes="(max-width: 860px) 100vw, 50vw" />
+						<Image class="gallery-image" src={controlCenter2} alt="GRID Control Center, secondary view" loading="lazy" decoding="async" widths={[480, 720, 960]} sizes="(max-width: 860px) 100vw, 50vw" />
+					</div>
+				</div>
+			</section>
+
+			<section class="editorial-section" id="asset-tracking">
+				<div class="section-rail">
+					<p class="section-kicker">Asset Tracking</p>
+				</div>
+				<div class="story-block">
+					<Image class="single-image" src={assetTracking} alt="GRID alerts, tracking, and analytics" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+				</div>
+			</section>
+
+			<section class="editorial-section" id="unified-communication">
+				<div class="section-rail">
+					<p class="section-kicker">Unified Communication</p>
+				</div>
+				<div class="story-block">
+					<Image class="single-image" src={unifiedComms} alt="GRID Unified Communication" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+				</div>
+			</section>
+
+			<section class="editorial-section" id="world-events">
+				<div class="section-rail">
+					<p class="section-kicker">Real-time World Events</p>
+				</div>
+				<div class="story-block">
+					<Image class="single-image" src={worldEvents} alt="GRID Real-time World Events" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+				</div>
+			</section>
+
+			<section class="editorial-section" id="destination-reports">
+				<div class="section-rail">
+					<p class="section-kicker">Destination Reports</p>
+				</div>
+				<div class="story-block">
+					<Image class="single-image" src={destinationReports} alt="GRID Destination Reports" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+				</div>
+			</section>
+		</main>
+	</div>
+</Layout>
+
+<style>
+	.case-page {
+		position: relative;
+		width: min(calc(100% - 3rem), 78rem);
+		margin: 0 auto;
+		padding: 1.25rem 0 5rem;
+	}
+
+	.eyebrow,
+	.meta-label,
+	.section-kicker {
+		font-family: var(--font-mono);
+		font-size: 0.82rem;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		line-height: 1.4;
+		text-transform: uppercase;
+	}
+
+	.eyebrow a {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.1rem 0;
+		color: var(--foreground);
+		text-decoration: none;
+		transition: opacity 120ms ease;
+	}
+
+	.eyebrow a:hover,
+	.eyebrow a:focus-visible {
+		opacity: 0.68;
+	}
+
+	.case-hero {
+		padding: 6rem 0 4rem;
+	}
+
+	.eyebrow,
+	.meta-label,
+	.section-kicker {
+		margin: 0;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 0.55rem;
+		margin-bottom: 1.1rem;
+		color: var(--muted-foreground);
+		font-style: normal;
+	}
+
+	.breadcrumb-link {
+		font-weight: 600;
+	}
+
+	.breadcrumb-separator {
+		color: var(--muted-foreground);
+	}
+
+	h1,
+	h2 {
+		margin: 0;
+		font-weight: 800;
+		letter-spacing: -0.05em;
+		color: var(--foreground);
+	}
+
+	.hero-subgrid {
+		display: grid;
+		grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+		gap: 2rem;
+		margin-top: 1.75rem;
+	}
+
+	.hero-text,
+	.summary-main p,
+	.story-block p,
+	.outcome-list li,
+	.closing-text {
+		font-size: 1.08rem;
+		line-height: 1.7;
+	}
+
+	.hero-text,
+	.summary-main p,
+	.story-block p,
+	.closing-text {
+		margin: 0;
+	}
+
+	.closing-text {
+		color: var(--muted-foreground);
+	}
+
+	.meta-strip {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 2rem;
+		padding: 1.5rem 0 0.5rem;
+		border-top: 1px solid var(--border);
+	}
+
+	.meta-item {
+		padding-top: 0.75rem;
+	}
+
+	.meta-value {
+		margin: 0.35rem 0 0;
+		font-size: 1.15rem;
+		font-weight: 700;
+	}
+
+	.lead-image-section {
+		padding: 2rem 0 4rem;
+	}
+
+	.lead-image,
+	.single-image,
+	.gallery-image {
+		width: 100%;
+		border: 1px solid var(--border);
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-large);
+	}
+
+	.gallery-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1.25rem;
+	}
+
+	.summary-section {
+		padding: 0 0 3rem;
+		border-bottom: 1px solid var(--border);
+	}
+
+	.summary-section h2 {
+		margin-top: 0.75rem;
+		font-size: clamp(2rem, 3vw, 3rem);
+		line-height: 1.04;
+	}
+
+	.summary-main {
+		display: grid;
+		gap: 1rem;
+		margin-top: 1.5rem;
+	}
+
+	.editorial-section {
+		display: grid;
+		grid-template-columns: 16rem minmax(0, 1fr);
+		gap: 2rem;
+		padding: 2.5rem 0;
+		border-bottom: 1px solid var(--border);
+	}
+
+	.editorial-section-no-divider {
+		border-bottom: 0;
+		padding-bottom: 0;
+	}
+
+	.section-rail {
+		align-self: start;
+	}
+
+	.story-block {
+		display: grid;
+		gap: 1rem;
+		max-width: 52rem;
+		margin-top: 0;
+	}
+
+	.outcome-list {
+		margin: 0;
+		padding-left: 1.25rem;
+		list-style: disc;
+		display: grid;
+		gap: 0.4rem;
+	}
+
+	.outcome-list li::marker {
+		color: var(--foreground);
+	}
+
+	@media (max-width: 980px) {
+		.hero-subgrid,
+		.meta-strip {
+			grid-template-columns: 1fr;
+		}
+
+		.gallery-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 720px) {
+		.case-page {
+			width: min(calc(100% - 1.5rem), 78rem);
+			padding-top: 1rem;
+		}
+
+		.editorial-section {
+			grid-template-columns: 1fr;
+		}
+
+		.case-hero {
+			padding: 4rem 0 3rem;
+		}
+
+		.hero-text,
+		.summary-main p,
+		.story-block p,
+		.outcome-list li,
+		.closing-text {
+			font-size: 1.05rem;
+		}
+	}
+</style>

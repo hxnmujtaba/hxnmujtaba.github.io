@@ -1,0 +1,363 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import { siteConfig } from '../../config/site';
+import coverImage from '../../assets/images/offerlanded-cover.png';
+
+const highlights = [
+	{ label: 'Role', value: 'End-to-End Product Design' },
+	{ label: 'Domain', value: 'AI-Powered Career Tools' },
+	{ label: 'Platform', value: 'Web Dashboard' },
+];
+
+const scope = [
+	'AI Resume Builder & Optimization',
+	'Job Tracking Dashboard',
+	'Interview Navigator & Mock Interviews',
+	'Skill Match & Keyword Analysis',
+	'Contact & Application Management',
+];
+
+const role = [
+	'End-to-end product design',
+	'UX architecture & workflow design',
+	'AI interaction modeling',
+	'High-fidelity UI & prototyping',
+];
+
+const systemFocus = [
+	'AI-driven resume-to-job matching logic',
+	'Structured career workflow management',
+	'Data visualization for skill & profile alignment',
+];
+
+const caseStudyUrl = new URL('/work/offerlanded', siteConfig.siteUrl).toString();
+const caseStudySchema = [
+	{
+		'@context': 'https://schema.org',
+		'@type': 'BreadcrumbList',
+		itemListElement: [
+			{ '@type': 'ListItem', position: 1, name: 'Home', item: siteConfig.siteUrl },
+			{ '@type': 'ListItem', position: 2, name: 'Work', item: new URL('/work', siteConfig.siteUrl).toString() },
+			{ '@type': 'ListItem', position: 3, name: 'OfferLanded Case Study', item: caseStudyUrl },
+		],
+	},
+	{
+		'@context': 'https://schema.org',
+		'@type': 'CreativeWork',
+		name: 'OfferLanded Case Study',
+		headline: 'OfferLanded — AI-Powered Job Search & Career Management Platform',
+		description:
+			'An intelligent career toolkit combining AI resume optimization, job tracking, interview preparation, and skill-match analysis.',
+		url: caseStudyUrl,
+		author: { '@type': 'Person', name: siteConfig.authorName },
+		isPartOf: { '@type': 'WebSite', name: siteConfig.name, url: siteConfig.siteUrl },
+		inLanguage: siteConfig.locale,
+	},
+];
+---
+
+<Layout
+	title="OfferLanded Case Study | Hassan Mujtaba"
+	description="OfferLanded — an AI-powered job search and career management platform combining resume optimization, job tracking, and interview preparation."
+	ogType="article"
+	ogImageAlt="OfferLanded job search platform preview"
+	schema={caseStudySchema}
+>
+	<a class="skip-link" href="#main-content">Skip to content</a>
+
+	<div class="case-page">
+		<SiteHeader />
+
+		<main id="main-content">
+			<section class="case-hero">
+				<p class="eyebrow">
+					<a class="breadcrumb-link" href="/work">Case Study</a>
+					<span class="breadcrumb-separator" aria-hidden="true">/</span>
+					<span>OfferLanded</span>
+				</p>
+				<h1 class="display-title">OfferLanded — AI-Powered Job Search & Career Management</h1>
+				<div class="hero-subgrid">
+					<p class="hero-text">
+						An intelligent career toolkit combining resume optimization, job tracking, and
+						interview preparation — designed to transform fragmented job searching into a
+						structured, AI-assisted career workflow.
+						<a class="hero-link" href="https://offerlanded.com" target="_blank" rel="noopener">offerlanded.com</a>
+					</p>
+				</div>
+			</section>
+
+			<section class="meta-strip" id="overview">
+				{highlights.map((item) => (
+					<div class="meta-item">
+						<p class="meta-label">{item.label}</p>
+						<p class="meta-value">{item.value}</p>
+					</div>
+				))}
+			</section>
+
+			<section class="lead-image-section">
+				<Image class="lead-image" src={coverImage} alt="OfferLanded Job Detail dashboard preview" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+			</section>
+
+			<section class="summary-section">
+				<p class="section-kicker">Overview</p>
+				<h2>A structured toolkit for a fragmented job search.</h2>
+				<div class="summary-main">
+					<p>
+						OfferLanded combines resume optimization, job tracking, and interview preparation into
+						one AI-assisted workflow — helping candidates go from application to offer with less
+						manual synthesis at every step.
+					</p>
+					<p><strong>Product scope:</strong></p>
+					<ul class="outcome-list">
+						{scope.map((item) => <li>{item}</li>)}
+					</ul>
+				</div>
+			</section>
+
+			<section class="editorial-section editorial-section-no-divider" id="role">
+				<div class="section-rail">
+					<p class="section-kicker">My Role</p>
+				</div>
+				<div class="story-block">
+					<ul class="outcome-list">
+						{role.map((item) => <li>{item}</li>)}
+					</ul>
+				</div>
+			</section>
+
+			<section class="editorial-section" id="system-focus">
+				<div class="section-rail">
+					<p class="section-kicker">System Focus</p>
+				</div>
+				<div class="story-block">
+					<ul class="outcome-list">
+						{systemFocus.map((item) => <li>{item}</li>)}
+					</ul>
+					<p class="closing-text">
+						Designed to transform fragmented job searching into a structured, AI-assisted career
+						workflow.
+					</p>
+				</div>
+			</section>
+		</main>
+	</div>
+</Layout>
+
+<style>
+	.case-page {
+		position: relative;
+		width: min(calc(100% - 3rem), 78rem);
+		margin: 0 auto;
+		padding: 1.25rem 0 5rem;
+	}
+
+	.eyebrow,
+	.meta-label,
+	.section-kicker {
+		font-family: var(--font-mono);
+		font-size: 0.82rem;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		line-height: 1.4;
+		text-transform: uppercase;
+	}
+
+	.eyebrow a {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.1rem 0;
+		color: var(--foreground);
+		text-decoration: none;
+		transition: opacity 120ms ease;
+	}
+
+	.eyebrow a:hover,
+	.eyebrow a:focus-visible {
+		opacity: 0.68;
+	}
+
+	.case-hero {
+		padding: 6rem 0 4rem;
+	}
+
+	.eyebrow,
+	.meta-label,
+	.section-kicker {
+		margin: 0;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 0.55rem;
+		margin-bottom: 1.1rem;
+		color: var(--muted-foreground);
+		font-style: normal;
+	}
+
+	.breadcrumb-link {
+		font-weight: 600;
+	}
+
+	.breadcrumb-separator {
+		color: var(--muted-foreground);
+	}
+
+	h1,
+	h2 {
+		margin: 0;
+		font-weight: 800;
+		letter-spacing: -0.05em;
+		color: var(--foreground);
+	}
+
+	.hero-subgrid {
+		display: grid;
+		grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+		gap: 2rem;
+		margin-top: 1.75rem;
+	}
+
+	.hero-text,
+	.summary-main p,
+	.story-block p,
+	.outcome-list li,
+	.closing-text {
+		font-size: 1.08rem;
+		line-height: 1.7;
+	}
+
+	.hero-text,
+	.summary-main p,
+	.story-block p,
+	.closing-text {
+		margin: 0;
+	}
+
+	.hero-link {
+		display: inline-block;
+		margin-left: 0.35rem;
+		color: var(--accent-link);
+	}
+
+	.closing-text {
+		color: var(--muted-foreground);
+	}
+
+	.meta-strip {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 2rem;
+		padding: 1.5rem 0 0.5rem;
+		border-top: 1px solid var(--border);
+	}
+
+	.meta-item {
+		padding-top: 0.75rem;
+	}
+
+	.meta-value {
+		margin: 0.35rem 0 0;
+		font-size: 1.15rem;
+		font-weight: 700;
+	}
+
+	.lead-image-section {
+		padding: 2rem 0 4rem;
+	}
+
+	.lead-image {
+		width: 100%;
+		border: 1px solid var(--border);
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-large);
+	}
+
+	.summary-section {
+		padding: 0 0 3rem;
+		border-bottom: 1px solid var(--border);
+	}
+
+	.summary-section h2 {
+		margin-top: 0.75rem;
+		font-size: clamp(2rem, 3vw, 3rem);
+		line-height: 1.04;
+	}
+
+	.summary-main {
+		display: grid;
+		gap: 1rem;
+		margin-top: 1.5rem;
+	}
+
+	.editorial-section {
+		display: grid;
+		grid-template-columns: 16rem minmax(0, 1fr);
+		gap: 2rem;
+		padding: 2.5rem 0;
+		border-bottom: 1px solid var(--border);
+	}
+
+	#system-focus {
+		border-bottom: 0;
+	}
+
+	.editorial-section-no-divider {
+		border-bottom: 0;
+		padding-bottom: 0;
+	}
+
+	.section-rail {
+		align-self: start;
+	}
+
+	.story-block {
+		display: grid;
+		gap: 1rem;
+		max-width: 52rem;
+		margin-top: 0;
+	}
+
+	.outcome-list {
+		margin: 0;
+		padding-left: 1.25rem;
+		list-style: disc;
+		display: grid;
+		gap: 0.4rem;
+	}
+
+	.outcome-list li::marker {
+		color: var(--foreground);
+	}
+
+	@media (max-width: 980px) {
+		.hero-subgrid,
+		.meta-strip {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 720px) {
+		.case-page {
+			width: min(calc(100% - 1.5rem), 78rem);
+			padding-top: 1rem;
+		}
+
+		.editorial-section {
+			grid-template-columns: 1fr;
+		}
+
+		.case-hero {
+			padding: 4rem 0 3rem;
+		}
+
+		.hero-text,
+		.summary-main p,
+		.story-block p,
+		.outcome-list li,
+		.closing-text {
+			font-size: 1.05rem;
+		}
+	}
+</style>

@@ -1,0 +1,240 @@
+---
+---
+
+<div class="lightbox-overlay" id="lightbox-overlay" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Image viewer">
+	<button class="lightbox-close" type="button" aria-label="Close image viewer">&times;</button>
+	<button class="lightbox-prev" type="button" aria-label="Previous image">&lsaquo;</button>
+	<button class="lightbox-next" type="button" aria-label="Next image">&rsaquo;</button>
+	<figure class="lightbox-figure">
+		<img class="lightbox-image" src="" alt="" />
+		<figcaption class="lightbox-caption"></figcaption>
+	</figure>
+	<p class="lightbox-counter"></p>
+</div>
+
+<style>
+	.lightbox-overlay {
+		position: fixed;
+		inset: 0;
+		z-index: 200;
+		display: none;
+		align-items: center;
+		justify-content: center;
+		padding: 3rem 4.5rem;
+		background: rgba(10, 10, 10, 0.92);
+	}
+
+	.lightbox-overlay.is-open {
+		display: flex;
+	}
+
+	.lightbox-figure {
+		margin: 0;
+		display: grid;
+		justify-items: center;
+		gap: 0.85rem;
+		max-width: 100%;
+		max-height: 100%;
+	}
+
+	.lightbox-image {
+		display: block;
+		max-width: 100%;
+		max-height: 80vh;
+		width: auto;
+		height: auto;
+		border-radius: 0.75rem;
+		box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+	}
+
+	.lightbox-caption {
+		max-width: 48rem;
+		font-size: 0.95rem;
+		line-height: 1.5;
+		text-align: center;
+		color: rgba(255, 255, 255, 0.82);
+	}
+
+	.lightbox-counter {
+		position: absolute;
+		bottom: 1.5rem;
+		left: 50%;
+		transform: translateX(-50%);
+		margin: 0;
+		font-family: var(--font-mono);
+		font-size: 0.82rem;
+		letter-spacing: 0.06em;
+		color: rgba(255, 255, 255, 0.6);
+	}
+
+	.lightbox-close,
+	.lightbox-prev,
+	.lightbox-next {
+		position: absolute;
+		display: inline-grid;
+		place-items: center;
+		border: 1px solid rgba(255, 255, 255, 0.28);
+		border-radius: 50%;
+		background: rgba(255, 255, 255, 0.08);
+		color: #fff;
+		cursor: pointer;
+		transition:
+			background-color 120ms ease,
+			transform 120ms ease;
+	}
+
+	.lightbox-close:hover,
+	.lightbox-prev:hover,
+	.lightbox-next:hover {
+		background: rgba(255, 255, 255, 0.18);
+	}
+
+	.lightbox-close {
+		top: 1.5rem;
+		right: 1.5rem;
+		width: 3rem;
+		height: 3rem;
+		font-size: 1.6rem;
+		line-height: 1;
+	}
+
+	.lightbox-prev,
+	.lightbox-next {
+		top: 50%;
+		width: 3.25rem;
+		height: 3.25rem;
+		font-size: 2rem;
+		line-height: 1;
+		transform: translateY(-50%);
+	}
+
+	.lightbox-prev:hover,
+	.lightbox-next:hover {
+		transform: translateY(-50%) scale(1.05);
+	}
+
+	.lightbox-prev {
+		left: 1.5rem;
+	}
+
+	.lightbox-next {
+		right: 1.5rem;
+	}
+
+	.lightbox-overlay.lightbox-single .lightbox-prev,
+	.lightbox-overlay.lightbox-single .lightbox-next,
+	.lightbox-overlay.lightbox-single .lightbox-counter {
+		display: none;
+	}
+
+	@media (max-width: 720px) {
+		.lightbox-overlay {
+			padding: 4.5rem 1rem 2.5rem;
+		}
+
+		.lightbox-close {
+			top: 0.85rem;
+			right: 0.85rem;
+			width: 2.6rem;
+			height: 2.6rem;
+		}
+
+		.lightbox-prev,
+		.lightbox-next {
+			width: 2.6rem;
+			height: 2.6rem;
+			font-size: 1.6rem;
+		}
+
+		.lightbox-prev {
+			left: 0.5rem;
+		}
+
+		.lightbox-next {
+			right: 0.5rem;
+		}
+	}
+</style>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const overlay = document.getElementById('lightbox-overlay');
+		if (!overlay) return;
+
+		const imgEl = overlay.querySelector<HTMLImageElement>('.lightbox-image');
+		const captionEl = overlay.querySelector<HTMLElement>('.lightbox-caption');
+		const counterEl = overlay.querySelector<HTMLElement>('.lightbox-counter');
+		const closeBtn = overlay.querySelector<HTMLButtonElement>('.lightbox-close');
+		const prevBtn = overlay.querySelector<HTMLButtonElement>('.lightbox-prev');
+		const nextBtn = overlay.querySelector<HTMLButtonElement>('.lightbox-next');
+
+		if (!imgEl || !captionEl || !counterEl || !closeBtn || !prevBtn || !nextBtn) return;
+
+		const gallery = Array.from(
+			document.querySelectorAll<HTMLImageElement>(
+				'.case-page img.lead-image, .case-page img.gallery-image, .case-page img.single-image',
+			),
+		);
+
+		if (!gallery.length) return;
+
+		overlay.classList.toggle('lightbox-single', gallery.length <= 1);
+
+		let currentIndex = -1;
+		let lastFocused: HTMLElement | null = null;
+
+		const show = (index: number) => {
+			currentIndex = (index + gallery.length) % gallery.length;
+			const target = gallery[currentIndex];
+			imgEl.src = target.currentSrc || target.src;
+			imgEl.alt = target.alt || '';
+			captionEl.textContent = target.alt || '';
+			counterEl.textContent = `${currentIndex + 1} / ${gallery.length}`;
+		};
+
+		const open = (index: number) => {
+			lastFocused = document.activeElement as HTMLElement | null;
+			show(index);
+			overlay.classList.add('is-open');
+			overlay.setAttribute('aria-hidden', 'false');
+			document.body.style.overflow = 'hidden';
+			closeBtn.focus();
+		};
+
+		const close = () => {
+			overlay.classList.remove('is-open');
+			overlay.setAttribute('aria-hidden', 'true');
+			document.body.style.overflow = '';
+			imgEl.src = '';
+			lastFocused?.focus();
+		};
+
+		gallery.forEach((img, index) => {
+			img.style.cursor = 'zoom-in';
+			img.setAttribute('role', 'button');
+			img.setAttribute('tabindex', '0');
+			img.addEventListener('click', () => open(index));
+			img.addEventListener('keydown', (event) => {
+				if (event.key === 'Enter' || event.key === ' ') {
+					event.preventDefault();
+					open(index);
+				}
+			});
+		});
+
+		closeBtn.addEventListener('click', close);
+		prevBtn.addEventListener('click', () => show(currentIndex - 1));
+		nextBtn.addEventListener('click', () => show(currentIndex + 1));
+
+		overlay.addEventListener('click', (event) => {
+			if (event.target === overlay) close();
+		});
+
+		document.addEventListener('keydown', (event) => {
+			if (!overlay.classList.contains('is-open')) return;
+			if (event.key === 'Escape') close();
+			if (event.key === 'ArrowLeft') show(currentIndex - 1);
+			if (event.key === 'ArrowRight') show(currentIndex + 1);
+		});
+	});
+</script>

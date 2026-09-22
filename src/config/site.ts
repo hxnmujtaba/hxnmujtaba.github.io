@@ -20,27 +20,27 @@ export type SiteConfig = {
 	socialLinks: SiteLink[];
 };
 
-const defaultSiteUrl = 'https://maria-lake.vercel.app';
+const defaultSiteUrl = 'https://hxnmujtaba.com';
 const envSiteUrl = process.env.SITE_URL ?? process.env.PUBLIC_SITE_URL;
 const normalizedSiteUrl = (envSiteUrl || defaultSiteUrl).replace(/\/+$/, '');
 
 export const siteConfig: SiteConfig = {
-	name: 'Maria',
-	title: 'Maria | Astro Theme for UI/UX Designer Portfolios',
+	name: 'Hassan Mujtaba',
+	title: 'Hassan Mujtaba | Product Designer & UX Architect',
 	description:
-		'A clean Astro theme for UI/UX designer portfolios, case studies, and modern product design presentations.',
+		'Product Designer & UX Architect with 12+ years of experience designing AI-enabled, data-driven SaaS platforms and complex enterprise systems.',
 	// Set SITE_URL or PUBLIC_SITE_URL to keep canonicals, robots.txt, and the sitemap aligned in each environment.
 	siteUrl: normalizedSiteUrl,
-	email: 'hello@maria.com',
+	email: 'hassan.mujtaba715@gmail.com',
 	locale: 'en-US',
-	authorName: 'Maria',
-	authorRole: 'UX Designer',
+	authorName: 'Muhammad Hassan Mujtaba',
+	authorRole: 'Senior Product Designer',
 	keywords: [
-		'Astro UI UX portfolio theme',
-		'UI UX designer portfolio template',
-		'Astro portfolio template',
-		'product designer portfolio theme',
-		'case study portfolio theme',
+		'Product Designer portfolio',
+		'UX Architect',
+		'Enterprise SaaS design',
+		'AI-enabled product design',
+		'case study portfolio',
 	],
 	ogImage: '/og-image.svg',
 	navLinks: [
@@ -49,7 +49,7 @@ export const siteConfig: SiteConfig = {
 		{ href: '/resume', label: 'Resume' },
 	],
 	extraPages: [
-		{ href: '/work/nextpoint', label: 'Case Study' },
+		{ href: '/work/grid', label: 'Case Study' },
 		{ href: '/cookies', label: 'Cookies' },
 		{ href: '/privacy', label: 'Privacy' },
 		{ href: '/terms', label: 'Terms' },
@@ -61,7 +61,7 @@ export const siteConfig: SiteConfig = {
 		{ href: '/terms', label: 'Terms' },
 	],
 	socialLinks: [
-		{ href: 'https://www.linkedin.com/', label: 'LinkedIn' },
-		{ href: 'https://dribbble.com/', label: 'Dribbble' },
+		{ href: 'https://www.linkedin.com/in/hassanmujtaba/', label: 'LinkedIn' },
+		{ href: 'https://www.behance.net/hxnmujtaba', label: 'Behance' },
 	],
 };

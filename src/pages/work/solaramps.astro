@@ -1,0 +1,513 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import { siteConfig } from '../../config/site';
+import coverImage from '../../assets/images/case-studies/solaramps-cover.png';
+import introImage from '../../assets/images/case-studies/solaramps-1.png';
+import workOrder1 from '../../assets/images/case-studies/solaramps-2.png';
+import workOrder2 from '../../assets/images/case-studies/solaramps-3.png';
+import projectMgmt from '../../assets/images/case-studies/solaramps-4.png';
+import widget1 from '../../assets/images/case-studies/solaramps-5.png';
+import widget2 from '../../assets/images/case-studies/solaramps-6.png';
+import performance from '../../assets/images/case-studies/solaramps-7.png';
+import billing from '../../assets/images/case-studies/solaramps-8.png';
+import salesPipeline from '../../assets/images/case-studies/solaramps-9.png';
+import gardenMgmt from '../../assets/images/case-studies/solaramps-10.png';
+import timesheet from '../../assets/images/case-studies/solaramps-11.png';
+import customerMgmt from '../../assets/images/case-studies/solaramps-12.png';
+
+const highlights = [
+	{ label: 'Role', value: 'Senior Product Designer' },
+	{ label: 'Domain', value: 'Solar Industry ERP' },
+	{ label: 'Platform', value: 'Web Dashboard' },
+];
+
+const modules = [
+	'Sales Pipeline Management',
+	'Project Management',
+	'Garden Management',
+	'Billing & Invoicing Management',
+	'Work Order Management',
+	'Marketplace',
+	'Timesheet Management',
+	'Widget Management',
+];
+
+const responsibilities = [
+	'Brainstorm with Business Analysts & Product Managers',
+	'Define user personas and flows',
+	'Create wireframes and full product designs',
+	'Collaborate in project team meetings',
+	'Conduct usability testing',
+	'Handoff designs to developers',
+];
+
+const challenges = [
+	'Ensuring cohesive navigation across multiple modules',
+	'Designing data-dense dashboards that present complex information clearly',
+	'Integrating workflow automation for notifications, approvals, and task assignments',
+	'Addressing the needs of diverse personas — Enterprise POCs, employees, field workers, and customers',
+];
+
+const outcomes = [
+	'Increased visibility into project status, billing, and service requests — faster decision-making for managers',
+	'Reduced design iteration time by 25% using AI-assisted workflows',
+	'Delivered the full product design independently, accelerating the project timeline by 20%',
+];
+
+const caseStudyUrl = new URL('/work/solaramps', siteConfig.siteUrl).toString();
+const caseStudySchema = [
+	{
+		'@context': 'https://schema.org',
+		'@type': 'BreadcrumbList',
+		itemListElement: [
+			{ '@type': 'ListItem', position: 1, name: 'Home', item: siteConfig.siteUrl },
+			{ '@type': 'ListItem', position: 2, name: 'Work', item: new URL('/work', siteConfig.siteUrl).toString() },
+			{ '@type': 'ListItem', position: 3, name: 'SolarAMPs Case Study', item: caseStudyUrl },
+		],
+	},
+	{
+		'@context': 'https://schema.org',
+		'@type': 'CreativeWork',
+		name: 'SolarAMPs Case Study',
+		headline: 'SolarAMPs — ERP Platform',
+		description:
+			'SolarAMPs is an enterprise resource planning platform targeting the solar industry, covering sales, project management, billing, and field operations.',
+		url: caseStudyUrl,
+		author: { '@type': 'Person', name: siteConfig.authorName },
+		isPartOf: { '@type': 'WebSite', name: siteConfig.name, url: siteConfig.siteUrl },
+		inLanguage: siteConfig.locale,
+	},
+];
+---
+
+<Layout
+	title="SolarAMPs Case Study | Hassan Mujtaba"
+	description="SolarAMPs — an enterprise resource planning platform targeting the solar industry, covering sales, project management, billing, and field operations."
+	ogType="article"
+	ogImageAlt="SolarAMPs ERP dashboard preview"
+	schema={caseStudySchema}
+>
+	<a class="skip-link" href="#main-content">Skip to content</a>
+
+	<div class="case-page">
+		<SiteHeader />
+
+		<main id="main-content">
+			<section class="case-hero">
+				<p class="eyebrow">
+					<a class="breadcrumb-link" href="/work">Case Study</a>
+					<span class="breadcrumb-separator" aria-hidden="true">/</span>
+					<span>SolarAMPs</span>
+				</p>
+				<h1 class="display-title">SolarAMPs — ERP Platform</h1>
+				<div class="hero-subgrid">
+					<p class="hero-text">
+						SolarAMPs is an enterprise resource planning platform targeting the solar industry
+						specifically, built for large-scale operations.
+					</p>
+				</div>
+			</section>
+
+			<section class="meta-strip" id="overview">
+				{highlights.map((item) => (
+					<div class="meta-item">
+						<p class="meta-label">{item.label}</p>
+						<p class="meta-value">{item.value}</p>
+					</div>
+				))}
+			</section>
+
+			<section class="lead-image-section">
+				<Image class="lead-image" src={coverImage} alt="SolarAMPs cover" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+			</section>
+
+			<section class="summary-section">
+				<p class="section-kicker">Overview</p>
+				<h2>A multi-module ERP built for solar operations at scale.</h2>
+				<div class="summary-main">
+					<p>
+						SolarAMPs is an enterprise resource planning platform targeting the solar industry
+						specifically. It consists of multiple modules, including:
+					</p>
+					<ul class="outcome-list">
+						{modules.map((item) => <li>{item}</li>)}
+					</ul>
+				</div>
+			</section>
+
+			<section class="editorial-section editorial-section-no-divider" id="responsibilities">
+				<div class="section-rail">
+					<p class="section-kicker">My Responsibilities</p>
+				</div>
+				<div class="story-block">
+					<p>
+						Addressed the needs of diverse personas including Enterprise POCs, employees, field
+						workers, and customers.
+					</p>
+					<ul class="outcome-list">
+						{responsibilities.map((item) => <li>{item}</li>)}
+					</ul>
+				</div>
+			</section>
+
+			<section class="editorial-section" id="challenges">
+				<div class="section-rail">
+					<p class="section-kicker">UX Challenges</p>
+				</div>
+				<div class="story-block">
+					<p>The project presented several UX challenges:</p>
+					<ul class="outcome-list">
+						{challenges.map((item) => <li>{item}</li>)}
+					</ul>
+				</div>
+			</section>
+
+			<section class="editorial-section" id="ai">
+				<div class="section-rail">
+					<p class="section-kicker">AI-Assisted Design & Intelligence</p>
+				</div>
+				<div class="story-block">
+					<p>
+						I leveraged AI-assisted design workflows to accelerate delivery and improve
+						decision-making across the product lifecycle: AI-assisted wireframing and layout
+						exploration for rapid UI ideation, AI-supported usability testing analysis to extract
+						insights efficiently, and AI-generated design documentation and assets for faster
+						developer handoff.
+					</p>
+					<p>
+						Additionally, the platform incorporated AI-powered features for end users, such as
+						predictive sales insights and analytics widgets to help managers identify bottlenecks.
+					</p>
+				</div>
+			</section>
+
+			<section class="editorial-section" id="outcome">
+				<div class="section-rail">
+					<p class="section-kicker">Impact</p>
+				</div>
+				<div class="story-block">
+					<ul class="outcome-list">
+						{outcomes.map((item) => <li>{item}</li>)}
+					</ul>
+					<p class="closing-text"><strong>Tools Used:</strong> Figma · Adobe Creative Suite · Balsamiq · ChatGPT · Whimsical</p>
+				</div>
+			</section>
+
+			<section class="editorial-section" id="intro-view">
+				<div class="section-rail">
+					<p class="section-kicker">Introduction</p>
+				</div>
+				<div class="story-block">
+					<Image class="single-image" src={introImage} alt="SolarAMPs introduction view" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+				</div>
+			</section>
+
+			<section class="editorial-section" id="work-order-management">
+				<div class="section-rail">
+					<p class="section-kicker">Work Order Management</p>
+				</div>
+				<div class="story-block">
+					<div class="gallery-grid">
+						<Image class="gallery-image" src={workOrder1} alt="Work Order Management" loading="lazy" decoding="async" widths={[480, 720, 960]} sizes="(max-width: 860px) 100vw, 50vw" />
+						<Image class="gallery-image" src={workOrder2} alt="Work Order Management, module map" loading="lazy" decoding="async" widths={[480, 720, 960]} sizes="(max-width: 860px) 100vw, 50vw" />
+					</div>
+				</div>
+			</section>
+
+			<section class="editorial-section" id="project-management">
+				<div class="section-rail">
+					<p class="section-kicker">Project Management</p>
+				</div>
+				<div class="story-block">
+					<Image class="single-image" src={projectMgmt} alt="Project Management" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+				</div>
+			</section>
+
+			<section class="editorial-section" id="widget-management">
+				<div class="section-rail">
+					<p class="section-kicker">Widget Management</p>
+				</div>
+				<div class="story-block">
+					<div class="gallery-grid">
+						<Image class="gallery-image" src={widget1} alt="Widget Management" loading="lazy" decoding="async" widths={[480, 720, 960]} sizes="(max-width: 860px) 100vw, 50vw" />
+						<Image class="gallery-image" src={widget2} alt="Widgets" loading="lazy" decoding="async" widths={[480, 720, 960]} sizes="(max-width: 860px) 100vw, 50vw" />
+					</div>
+				</div>
+			</section>
+
+			<section class="editorial-section" id="performance-report">
+				<div class="section-rail">
+					<p class="section-kicker">Performance Reporting</p>
+				</div>
+				<div class="story-block">
+					<Image class="single-image" src={performance} alt="Performance Reports" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+				</div>
+			</section>
+
+			<section class="editorial-section" id="billing-management">
+				<div class="section-rail">
+					<p class="section-kicker">Billing Management</p>
+				</div>
+				<div class="story-block">
+					<Image class="single-image" src={billing} alt="Billing & Invoicing Management" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+				</div>
+			</section>
+
+			<section class="editorial-section" id="sales-pipeline-management">
+				<div class="section-rail">
+					<p class="section-kicker">Sales Pipeline Management</p>
+				</div>
+				<div class="story-block">
+					<Image class="single-image" src={salesPipeline} alt="Sales Pipeline Management" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+				</div>
+			</section>
+
+			<section class="editorial-section" id="garden-management">
+				<div class="section-rail">
+					<p class="section-kicker">Solar Garden Management</p>
+				</div>
+				<div class="story-block">
+					<Image class="single-image" src={gardenMgmt} alt="Solar Garden Management" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+				</div>
+			</section>
+
+			<section class="editorial-section" id="timesheet-management">
+				<div class="section-rail">
+					<p class="section-kicker">Timesheet Management</p>
+				</div>
+				<div class="story-block">
+					<Image class="single-image" src={timesheet} alt="Timesheet Management" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+				</div>
+			</section>
+
+			<section class="editorial-section" id="customer-management">
+				<div class="section-rail">
+					<p class="section-kicker">Customer Management</p>
+				</div>
+				<div class="story-block">
+					<Image class="single-image" src={customerMgmt} alt="Customer Management" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+				</div>
+			</section>
+		</main>
+	</div>
+</Layout>
+
+<style>
+	.case-page {
+		position: relative;
+		width: min(calc(100% - 3rem), 78rem);
+		margin: 0 auto;
+		padding: 1.25rem 0 5rem;
+	}
+
+	.eyebrow,
+	.meta-label,
+	.section-kicker {
+		font-family: var(--font-mono);
+		font-size: 0.82rem;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		line-height: 1.4;
+		text-transform: uppercase;
+	}
+
+	.eyebrow a {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.1rem 0;
+		color: var(--foreground);
+		text-decoration: none;
+		transition: opacity 120ms ease;
+	}
+
+	.eyebrow a:hover,
+	.eyebrow a:focus-visible {
+		opacity: 0.68;
+	}
+
+	.case-hero {
+		padding: 6rem 0 4rem;
+	}
+
+	.eyebrow,
+	.meta-label,
+	.section-kicker {
+		margin: 0;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 0.55rem;
+		margin-bottom: 1.1rem;
+		color: var(--muted-foreground);
+		font-style: normal;
+	}
+
+	.breadcrumb-link {
+		font-weight: 600;
+	}
+
+	.breadcrumb-separator {
+		color: var(--muted-foreground);
+	}
+
+	h1,
+	h2 {
+		margin: 0;
+		font-weight: 800;
+		letter-spacing: -0.05em;
+		color: var(--foreground);
+	}
+
+	.hero-subgrid {
+		display: grid;
+		grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+		gap: 2rem;
+		margin-top: 1.75rem;
+	}
+
+	.hero-text,
+	.summary-main p,
+	.story-block p,
+	.outcome-list li,
+	.closing-text {
+		font-size: 1.08rem;
+		line-height: 1.7;
+	}
+
+	.hero-text,
+	.summary-main p,
+	.story-block p,
+	.closing-text {
+		margin: 0;
+	}
+
+	.closing-text {
+		color: var(--muted-foreground);
+	}
+
+	.meta-strip {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 2rem;
+		padding: 1.5rem 0 0.5rem;
+		border-top: 1px solid var(--border);
+	}
+
+	.meta-item {
+		padding-top: 0.75rem;
+	}
+
+	.meta-value {
+		margin: 0.35rem 0 0;
+		font-size: 1.15rem;
+		font-weight: 700;
+	}
+
+	.lead-image-section {
+		padding: 2rem 0 4rem;
+	}
+
+	.lead-image,
+	.single-image,
+	.gallery-image {
+		width: 100%;
+		border: 1px solid var(--border);
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-large);
+	}
+
+	.gallery-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1.25rem;
+	}
+
+	.summary-section {
+		padding: 0 0 3rem;
+		border-bottom: 1px solid var(--border);
+	}
+
+	.summary-section h2 {
+		margin-top: 0.75rem;
+		font-size: clamp(2rem, 3vw, 3rem);
+		line-height: 1.04;
+	}
+
+	.summary-main {
+		display: grid;
+		gap: 1rem;
+		margin-top: 1.5rem;
+	}
+
+	.editorial-section {
+		display: grid;
+		grid-template-columns: 16rem minmax(0, 1fr);
+		gap: 2rem;
+		padding: 2.5rem 0;
+		border-bottom: 1px solid var(--border);
+	}
+
+	.editorial-section-no-divider {
+		border-bottom: 0;
+		padding-bottom: 0;
+	}
+
+	.section-rail {
+		align-self: start;
+	}
+
+	.story-block {
+		display: grid;
+		gap: 1rem;
+		max-width: 52rem;
+		margin-top: 0;
+	}
+
+	.outcome-list {
+		margin: 0;
+		padding-left: 1.25rem;
+		list-style: disc;
+		display: grid;
+		gap: 0.4rem;
+	}
+
+	.outcome-list li::marker {
+		color: var(--foreground);
+	}
+
+	@media (max-width: 980px) {
+		.hero-subgrid,
+		.meta-strip {
+			grid-template-columns: 1fr;
+		}
+
+		.gallery-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 720px) {
+		.case-page {
+			width: min(calc(100% - 1.5rem), 78rem);
+			padding-top: 1rem;
+		}
+
+		.editorial-section {
+			grid-template-columns: 1fr;
+		}
+
+		.case-hero {
+			padding: 4rem 0 3rem;
+		}
+
+		.hero-text,
+		.summary-main p,
+		.story-block p,
+		.outcome-list li,
+		.closing-text {
+			font-size: 1.05rem;
+		}
+	}
+</style>

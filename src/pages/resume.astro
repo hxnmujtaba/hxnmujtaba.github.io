@@ -1,23 +1,85 @@
 ---
-import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
-import figmaLogo from '../assets/logos/figma.svg';
-import framerLogo from '../assets/logos/framer.svg';
-import shopifyLogo from '../assets/logos/shopify.svg';
-import webflowLogo from '../assets/logos/webflow.svg';
+
+const experience = [
+	{
+		role: 'Senior UI/UX Designer',
+		company: 'Global Rescue LLC',
+		period: 'Mar 2025 - Present',
+		summary: "Led continued evolution of GRID's UX architecture across enterprise web and consumer mobile platforms.",
+		bullets: [
+			'Enhanced multi-module dashboard scalability and cross-platform consistency',
+			'Refined data-heavy user flows to improve clarity, speed, and decision-making',
+			'Partnered with AI and product teams to integrate intelligent, adaptive user experiences',
+		],
+	},
+	{
+		role: 'Senior Product Designer',
+		company: 'Solar Informatics Inc.',
+		period: 'Feb 2022 - Mar 2025',
+		summary: 'Led UX architecture for SolarAMPs ERP and enterprise renewable energy systems.',
+		bullets: [
+			'Owned multi-module UX architecture across operational workflows',
+			'Contributed to product roadmap and platform evolution',
+			'Governed scalable design standards across modules',
+			'Led ERP architecture redesign across web & mobile',
+			'Established scalable design system foundations',
+		],
+	},
+	{
+		role: 'Senior UI/UX Designer',
+		company: 'Global Rescue LLC',
+		period: 'Jul 2021 - Feb 2022',
+		summary: 'Led full-platform UX architecture revamp of GRID, a mission-critical intelligence SaaS platform.',
+		bullets: [
+			'Re-structured multi-module dashboard ecosystem',
+			'Improved usability in data-intensive environments',
+			'Collaborated with AI teams on intelligent workflow integration',
+		],
+	},
+	{
+		role: 'UI/UX Design Lead',
+		company: 'Vintage Technologies',
+		period: 'Nov 2020 - Jul 2021',
+		summary: 'Short-term leadership engagement overseeing UX direction.',
+		bullets: [],
+	},
+	{
+		role: 'Design Team Lead',
+		company: 'Bitsol Technologies',
+		period: 'May 2018 - Oct 2020',
+		summary: 'Led enterprise client product design initiatives.',
+		bullets: [
+			'Drove discovery-to-delivery UX execution',
+			'Shaped product direction across web-based platforms',
+			'Translated business requirements into scalable interaction models',
+		],
+	},
+	{
+		role: 'Design Team Lead',
+		company: 'Ninesol Technologies',
+		period: 'Jul 2013 - Apr 2018',
+		summary: 'Led and mentored a team of designers across multiple projects.',
+		bullets: ['Standardized design processes and collaboration workflows', 'Delivered scalable client-facing platforms'],
+	},
+];
 
 const tools = [
-	{ name: 'Figma', logo: figmaLogo, tone: 'light' },
-	{ name: 'Framer', logo: framerLogo, tone: 'dark' },
-	{ name: 'Shopify', logo: shopifyLogo, tone: 'light' },
-	{ name: 'Webflow', logo: webflowLogo, tone: 'light' },
+	'Figma',
+	'Balsamiq',
+	'Adobe Creative Suite',
+	'Sketch',
+	'Microsoft Teams',
+	'Trello',
+	'Slack',
+	'ChatGPT',
 ];
 ---
 
 <Layout
-	title="Resume | Astro Theme for UI/UX Designer Portfolios"
-	description="Resume page example from the Maria Astro theme for UI/UX designer portfolios, showcasing experience, capabilities, and tools."
+	title="Resume | Hassan Mujtaba, Product Designer & UX Architect"
+	description="Resume of Muhammad Hassan Mujtaba — 12+ years of experience designing enterprise SaaS, AI-integrated systems, and complex product architecture."
 >
 	<a class="skip-link" href="#main-content">Skip to content</a>
 
@@ -27,12 +89,12 @@ const tools = [
 		<main id="main-content">
 			<section class="hero">
 				<p class="eyebrow">Resume</p>
-				<h1 class="display-title">10+ years shaping digital products through UX, UI, and systems thinking.</h1>
+				<h1 class="display-title">12+ years designing enterprise SaaS, AI-integrated systems, and complex product architecture.</h1>
 				<div class="hero-subgrid">
 					<p class="hero-text">
-						My work has focused on product clarity: helping teams bring structure to messy
-						workflows, overloaded interfaces, and growing systems that need to scale without
-						becoming harder to use.
+						My work has focused on structuring multi-module SaaS systems that scale with
+						operational complexity — across enterprise intelligence, renewable energy ERP, and
+						healthcare platforms.
 					</p>
 				</div>
 			</section>
@@ -42,10 +104,10 @@ const tools = [
 					<p class="section-kicker">Snapshot</p>
 				</div>
 				<div class="story-block">
-					<p><strong>Location:</strong> Europe</p>
-					<p><strong>Focus:</strong> UX Design / Product Design</p>
-					<p><strong>Specialties:</strong> Dashboards, workflows, design systems</p>
-					<p><strong>Contact:</strong> <a href="mailto:hello@maria.com">hello@maria.com</a></p>
+					<p><strong>Role:</strong> Senior Product Designer / UX Architect</p>
+					<p><strong>Specialties:</strong> AI-integrated systems, enterprise SaaS, intelligence platforms, healthcare systems, renewable energy</p>
+					<p><strong>Contact:</strong> <a href="mailto:hassan.mujtaba715@gmail.com">hassan.mujtaba715@gmail.com</a> · <a href="tel:+923325662228">+92 332 5662228</a></p>
+					<p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/hassanmujtaba/" target="_blank" rel="noopener">linkedin.com/in/hassanmujtaba</a></p>
 				</div>
 			</section>
 
@@ -54,30 +116,53 @@ const tools = [
 					<p class="section-kicker">Experience</p>
 				</div>
 				<div class="story-block">
+					{
+						experience.map((job) => (
+							<div class="job-entry">
+								<p>
+									<strong>{job.role}</strong> · {job.company}
+									<br />
+									<span class="job-period">{job.period}</span>
+								</p>
+								<p>{job.summary}</p>
+								{job.bullets.length > 0 && (
+									<ul class="job-bullets">
+										{job.bullets.map((bullet) => (
+											<li>{bullet}</li>
+										))}
+									</ul>
+								)}
+							</div>
+						))
+					}
+				</div>
+			</section>
+
+			<section class="editorial-section">
+				<div class="section-rail">
+					<p class="section-kicker">Education</p>
+				</div>
+				<div class="story-block">
 					<p>
-						<strong>Lead UX Designer</strong><br />
-						Independent / Consulting, 2021 - Present
+						<strong>(MS) Project Management</strong><br />
+						Bahria University, Islamabad · 2016 - 2018
 					</p>
 					<p>
-						Leading interface design, product thinking, and design systems work across SaaS and
-						service platforms.
+						<strong>Bachelor of Software Engineering</strong><br />
+						Bahria University, Islamabad · 2009 - 2013
 					</p>
+				</div>
+			</section>
+
+			<section class="editorial-section">
+				<div class="section-rail">
+					<p class="section-kicker">Recognition</p>
+				</div>
+				<div class="story-block">
 					<p>
-						<strong>Senior Product Designer</strong><br />
-						Digital Product Studio, 2017 - 2021
+						<strong>Guest Speaker</strong> — Interaction Design Foundation, Islamabad Chapter · Dec 2025
 					</p>
-					<p>
-						Designed workflows, dashboards, and multi-platform product experiences for startup
-						and enterprise clients.
-					</p>
-					<p>
-						<strong>UI/UX Designer</strong><br />
-						In-house Product Teams, 2014 - 2017
-					</p>
-					<p>
-						Built core interface patterns, user flows, and production-ready visual systems for
-						web and mobile products.
-					</p>
+					<p>Conducted a session with fellow designers on "How AI is Reshaping the Designer's Workflow."</p>
 				</div>
 			</section>
 
@@ -87,16 +172,16 @@ const tools = [
 				</div>
 				<div class="story-block">
 					<p>
-						<strong>Product Strategy:</strong> framing problems, prioritizing experience
-						decisions, and aligning product goals with user value.
+						<strong>AI-Integrated Product Systems:</strong> designing intelligent workflows that
+						enhance enterprise decision-making, with human-in-the-loop interaction models.
 					</p>
 					<p>
-						<strong>UI Systems:</strong> building coherent interface languages that scale across
-						flows, features, and implementation teams.
+						<strong>Business-Aligned Architecture:</strong> structuring multi-module SaaS systems
+						that scale with operational complexity.
 					</p>
 					<p>
-						<strong>Execution:</strong> taking concepts through wireframes, high-fidelity UI,
-						refinement, and developer-ready handoff.
+						<strong>Cross-Functional Product Influence:</strong> translating constraints into
+						structured interaction models alongside product and engineering.
 					</p>
 				</div>
 			</section>
@@ -105,17 +190,8 @@ const tools = [
 				<div class="section-rail">
 					<p class="section-kicker">Tools</p>
 				</div>
-				<div class="tools-grid">
-					{
-						tools.map((tool) => (
-							<div class="tool-card">
-								<div class:list={['tool-mark', tool.tone === 'dark' && 'tool-mark-dark']} aria-hidden="true">
-									<Image class="tool-logo" src={tool.logo} alt="" loading="lazy" />
-								</div>
-								<p class="tool-name">{tool.name}</p>
-							</div>
-						))
-					}
+				<div class="story-block">
+					<p>{tools.join(' · ')}</p>
 				</div>
 			</section>
 		</main>
@@ -186,59 +262,36 @@ const tools = [
 		color: var(--foreground);
 	}
 
-	.tools-grid {
+	.job-entry {
 		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 1rem;
-		max-width: 44rem;
+		gap: 0.5rem;
+		padding-bottom: 1.25rem;
+		margin-bottom: 1.25rem;
+		border-bottom: 1px solid var(--border);
 	}
 
-	.tool-card {
-		display: flex;
-		align-items: center;
-		gap: 0.9rem;
-		padding: 1rem 1.05rem;
-		border: 1px solid var(--border);
-		border-radius: 1.15rem;
-		background: var(--card);
+	.job-entry:last-child {
+		padding-bottom: 0;
+		margin-bottom: 0;
+		border-bottom: 0;
 	}
 
-	.tool-mark {
-		width: 3rem;
-		height: 3rem;
-		flex: 0 0 3rem;
-		display: grid;
-		place-items: center;
-		border-radius: 0.9rem;
-		background: linear-gradient(
-			180deg,
-			color-mix(in srgb, var(--muted) 90%, var(--card) 10%) 0%,
-			color-mix(in srgb, var(--border) 55%, var(--card) 45%) 100%
-		);
-		border: 1px solid color-mix(in srgb, var(--border) 88%, var(--background) 12%);
+	.job-period {
+		color: var(--muted-foreground);
 		font-size: 0.95rem;
-		font-weight: 800;
-		letter-spacing: -0.04em;
-		color: var(--foreground);
 	}
 
-	.tool-mark-dark {
-		background: #111111;
-		border-color: #111111;
+	.job-bullets {
+		margin: 0.25rem 0 0;
+		padding-left: 1.25rem;
+		list-style: disc;
+		display: grid;
+		gap: 0.35rem;
 	}
 
-	.tool-logo {
-		width: 1.55rem;
-		height: 1.55rem;
-		display: block;
-		object-fit: contain;
-	}
-
-	.tool-name {
-		margin: 0;
-		font-size: 1rem;
-		font-weight: 600;
-		letter-spacing: -0.02em;
+	.job-bullets li {
+		font-size: 1.02rem;
+		line-height: 1.6;
 	}
 
 	@media (max-width: 980px) {
