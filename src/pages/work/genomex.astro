@@ -4,6 +4,8 @@ import Layout from '../../layouts/Layout.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import { siteConfig } from '../../config/site';
 import coverImage from '../../assets/images/case-studies/genomex-cover.png';
+import detailsImage from '../../assets/images/case-studies/genomex-details.png';
+import uiScreensImage from '../../assets/images/case-studies/genomex-ui-screens.png';
 
 const highlights = [
 	{ label: 'Role', value: 'End-to-End Product Design' },
@@ -163,6 +165,10 @@ const caseStudySchema = [
 				</div>
 			</section>
 
+			<section class="lead-image-section">
+				<Image class="single-image" src={detailsImage} alt="GenomeX design challenges and AI-assisted solutions breakdown" loading="lazy" decoding="async" widths={[480, 720, 960]} sizes="(max-width: 78rem) 100vw, 60rem" />
+			</section>
+
 			<section class="editorial-section" id="analytics">
 				<div class="section-rail">
 					<p class="section-kicker">Performance Analytics</p>
@@ -176,6 +182,10 @@ const caseStudySchema = [
 						at a glance.
 					</p>
 				</div>
+			</section>
+
+			<section class="lead-image-section">
+				<Image class="single-image" src={uiScreensImage} alt="GenomeX UI screens across onboarding, dashboard, and workout planning" loading="lazy" decoding="async" widths={[480, 720, 960]} sizes="(max-width: 78rem) 100vw, 60rem" />
 			</section>
 		</main>
 	</div>
@@ -296,7 +306,8 @@ const caseStudySchema = [
 		padding: 2rem 0 4rem;
 	}
 
-	.lead-image {
+	.lead-image,
+	.single-image {
 		width: 100%;
 		border: 1px solid var(--border);
 		border-radius: 1.5rem;
