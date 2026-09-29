@@ -66,7 +66,7 @@ const homepageProjects = homepageOrder.map((name) => projects.find((p) => p.name
 					</p>
 					<div class="process-diagram-panel">
 						<img
-							class="process-diagram"
+							class="process-diagram process-diagram--architecture"
 							src="/images/process/ecosystem-architecture.svg"
 							alt="AI-agnostic ecosystem architecture diagram — terminal, AI agent core model, knowledgebase, GitHub repository, agent library, and shared skills library"
 							loading="lazy"
@@ -212,6 +212,10 @@ const homepageProjects = homepageOrder.map((name) => projects.find((p) => p.name
 		width: 100%;
 		max-width: 52rem;
 		height: auto;
+	}
+
+	.process-diagram--architecture {
+		max-width: 66rem;
 	}
 
 	.projects-grid {
