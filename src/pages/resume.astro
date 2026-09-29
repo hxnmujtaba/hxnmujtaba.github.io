@@ -104,10 +104,10 @@ const tools = [
 					<p class="section-kicker">Snapshot</p>
 				</div>
 				<div class="story-block">
-					<p><strong>Role:</strong> Senior Product Designer / UX Architect</p>
-					<p><strong>Specialties:</strong> AI-integrated systems, enterprise SaaS, intelligence platforms, healthcare systems, renewable energy</p>
-					<p><strong>Contact:</strong> <a href="mailto:hassan.mujtaba715@gmail.com">hassan.mujtaba715@gmail.com</a> · <a href="tel:+923325662228">+92 332 5662228</a></p>
-					<p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/hassanmujtaba/" target="_blank" rel="noopener">linkedin.com/in/hassanmujtaba</a></p>
+					<p><strong class="snapshot-label">Role:</strong> Senior Product Designer / UX Architect</p>
+					<p><strong class="snapshot-label">Specialties:</strong> AI-integrated systems, enterprise SaaS, intelligence platforms, healthcare systems, renewable energy</p>
+					<p><strong class="snapshot-label">Contact:</strong> <a href="mailto:hassan.mujtaba715@gmail.com">hassan.mujtaba715@gmail.com</a> · <a href="tel:+923325662228">+92 332 5662228</a></p>
+					<p><strong class="snapshot-label">LinkedIn:</strong> <a href="https://www.linkedin.com/in/hassanmujtaba/" target="_blank" rel="noopener">linkedin.com/in/hassanmujtaba</a></p>
 				</div>
 			</section>
 
@@ -120,7 +120,7 @@ const tools = [
 						experience.map((job) => (
 							<div class="job-entry">
 								<p>
-									<strong>{job.role}</strong> · {job.company}
+									<strong class="job-role">{job.role}</strong> · {job.company}
 									<br />
 									<span class="job-period">{job.period}</span>
 								</p>
@@ -253,6 +253,14 @@ const tools = [
 
 	.story-block strong {
 		color: var(--foreground);
+	}
+
+	.snapshot-label {
+		color: #3b82f6;
+	}
+
+	.job-role {
+		color: #8b5cf6;
 	}
 
 	.job-entry {
