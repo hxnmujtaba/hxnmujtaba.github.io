@@ -13,7 +13,7 @@ export type Project = {
 	name: string;
 	title: string;
 	description: string;
-	background: 'lime' | 'cyan' | 'lavender' | 'mint' | 'violet';
+	background: 'lime' | 'cyan' | 'lavender' | 'mint' | 'violet' | 'sky';
 	variant: 'desktop' | 'split' | 'mobile' | 'board';
 	href: string;
 	image: ImageMetadata;
@@ -84,6 +84,18 @@ export const projects: Project[] = [
 		alt: 'OfferLanded job search platform preview',
 		imageClass: 'project-preview-image',
 	},
+	{
+		name: 'SOAPsuds',
+		title: 'AI-powered clinical notes & scribing platform',
+		description:
+			'AI-generated SOAP notes, visit recording, and a human-in-the-loop Magic Edit layer that streamlines documentation for clinicians.',
+		background: 'sky',
+		variant: 'desktop',
+		href: '/work/soapsuds',
+		image: soapsudsImage,
+		alt: 'SOAPsuds clinical notes platform preview',
+		imageClass: 'project-preview-image',
+	},
 ];
 
 export type OtherProject = {
@@ -96,15 +108,6 @@ export type OtherProject = {
 };
 
 export const otherProjects: OtherProject[] = [
-	{
-		name: 'SOAPsuds',
-		description:
-			'AI-powered clinical notes and scribing platform — AI-generated SOAP notes, visit recording, and a human-in-the-loop Magic Edit layer for clinicians.',
-		image: soapsudsImage,
-		alt: 'SOAPsuds clinical notes platform preview',
-		href: '/work/soapsuds',
-		link: 'https://soapsuds.io',
-	},
 	{
 		name: 'Jot.ai',
 		description:
