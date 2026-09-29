@@ -19,10 +19,12 @@ import portraitImage from '../assets/images/hassan-portrait.png';
 				<p class="eyebrow">About</p>
 				<div class="hero-layout">
 					<div class="hero-copy">
-						<h1 class="display-title">I design complex systems by aligning user goals, business strategy, and system logic.</h1>
+						<h1 class="display-title">
+							I'm Hassan, a Product Designer &amp; UX Architect with 12+ years turning complex,
+							multi-module SaaS systems into experiences people navigate with confidence.
+						</h1>
 						<p class="hero-text">
-							I'm Hassan, a Product Designer & UX Architect with 12+ years turning dense,
-							multi-module SaaS products into experiences people navigate with confidence.
+							I design software that aligns user goals, business strategy, and system logic.
 						</p>
 					</div>
 					<div class="hero-portrait-wrap">
@@ -48,7 +50,7 @@ import portraitImage from '../assets/images/hassan-portrait.png';
 						12+ years structuring multi-module SaaS systems that scale with operational
 						complexity, without losing usability under real-world pressure.
 					</p>
-					<ul class="tag-list">
+					<ul class="tag-list tag-list--background">
 						<li>Enterprise Intelligence</li>
 						<li>Renewable Energy ERP</li>
 						<li>Healthcare Platforms</li>
@@ -62,7 +64,7 @@ import portraitImage from '../assets/images/hassan-portrait.png';
 				</div>
 				<div class="story-block">
 					<p>AI woven through every stage, not bolted on at the end:</p>
-					<ul class="tag-list">
+					<ul class="tag-list tag-list--work">
 						<li>Understand</li>
 						<li>Research</li>
 						<li>Architect</li>
@@ -191,6 +193,18 @@ import portraitImage from '../assets/images/hassan-portrait.png';
 		font-size: 0.92rem;
 		font-weight: 600;
 		color: var(--foreground);
+	}
+
+	.tag-list--background li {
+		background: color-mix(in srgb, #3b82f6 14%, transparent);
+		border-color: color-mix(in srgb, #3b82f6 45%, var(--border));
+		color: color-mix(in srgb, #3b82f6 70%, var(--foreground));
+	}
+
+	.tag-list--work li {
+		background: color-mix(in srgb, #8b5cf6 14%, transparent);
+		border-color: color-mix(in srgb, #8b5cf6 45%, var(--border));
+		color: color-mix(in srgb, #8b5cf6 70%, var(--foreground));
 	}
 
 	.focus-list {
