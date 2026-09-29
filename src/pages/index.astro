@@ -3,6 +3,9 @@ import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import { projects } from '../data/projects';
+
+const homepageOrder = ['GRID', 'SolarAMPs', 'GenomeX', 'Pretelio', 'Medicra365', 'SOAPsuds'];
+const homepageProjects = homepageOrder.map((name) => projects.find((p) => p.name === name)!);
 ---
 
 <Layout
@@ -28,7 +31,7 @@ import { projects } from '../data/projects';
 			<section class="projects" id="work">
 				<div class="projects-grid">
 					{
-						projects.map((project, index) => (
+						homepageProjects.map((project, index) => (
 							<a class="project-link" href={project.href}>
 								<article class={`project-card ${project.background}`}>
 									<div class="project-header">
