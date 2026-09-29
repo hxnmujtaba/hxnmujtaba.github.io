@@ -5,6 +5,7 @@ import medicraImage from '../assets/images/case-studies/medicra365-cover.png';
 import genomexImage from '../assets/images/case-studies/genomex-cover.png';
 import offerlandedImage from '../assets/images/offerlanded-cover.png';
 import soapsudsImage from '../assets/images/other-projects/soapsuds.png';
+import pretelioImage from '../assets/images/case-studies/pretelio-cover.png';
 import jotaiImage from '../assets/images/other-projects/jotai.png';
 import unwyndImage from '../assets/images/other-projects/unwynd.png';
 import boxtrImage from '../assets/images/other-projects/boxtr.png';
@@ -13,7 +14,7 @@ export type Project = {
 	name: string;
 	title: string;
 	description: string;
-	background: 'lime' | 'cyan' | 'lavender' | 'mint' | 'violet' | 'sky';
+	background: 'lime' | 'cyan' | 'lavender' | 'mint' | 'violet' | 'sky' | 'seafoam';
 	variant: 'desktop' | 'split' | 'mobile' | 'board';
 	href: string;
 	image: ImageMetadata;
@@ -94,6 +95,18 @@ export const projects: Project[] = [
 		href: '/work/soapsuds',
 		image: soapsudsImage,
 		alt: 'SOAPsuds clinical notes platform preview',
+		imageClass: 'project-preview-image',
+	},
+	{
+		name: 'Pretelio',
+		title: 'Retail intelligence & loyalty platform',
+		description:
+			'A scalable system for dynamic pricing, localized offers, and customer engagement across multi-store retail ecosystems.',
+		background: 'seafoam',
+		variant: 'desktop',
+		href: '/work/pretelio',
+		image: pretelioImage,
+		alt: 'Pretelio retail intelligence platform preview',
 		imageClass: 'project-preview-image',
 	},
 ];
