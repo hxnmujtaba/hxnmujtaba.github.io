@@ -2,6 +2,7 @@ import type { ImageMetadata } from 'astro';
 import gridImage from '../assets/images/case-studies/grid-cover.png';
 import solarampsImage from '../assets/images/case-studies/solaramps-cover.png';
 import medicraImage from '../assets/images/case-studies/medicra365-cover.png';
+import genomexImage from '../assets/images/case-studies/genomex-cover.png';
 import offerlandedImage from '../assets/images/offerlanded-cover.png';
 import soapsudsImage from '../assets/images/other-projects/soapsuds.png';
 import jotaiImage from '../assets/images/other-projects/jotai.png';
@@ -12,7 +13,7 @@ export type Project = {
 	name: string;
 	title: string;
 	description: string;
-	background: 'lime' | 'cyan' | 'lavender' | 'mint';
+	background: 'lime' | 'cyan' | 'lavender' | 'mint' | 'violet';
 	variant: 'desktop' | 'split' | 'mobile' | 'board';
 	href: string;
 	image: ImageMetadata;
@@ -45,6 +46,18 @@ export const projects: Project[] = [
 		href: '/work/solaramps',
 		image: solarampsImage,
 		alt: 'SolarAMPs ERP dashboard preview',
+		imageClass: 'project-preview-image',
+	},
+	{
+		name: 'GenomeX',
+		title: 'AI-powered workout planner for athletes',
+		description:
+			'A genetics-driven training platform translating SNP data and real-time biometrics into adaptive, AI-generated workout plans.',
+		background: 'violet',
+		variant: 'mobile',
+		href: '/work/genomex',
+		image: genomexImage,
+		alt: 'GenomeX AI workout planner app preview',
 		imageClass: 'project-preview-image',
 	},
 	{
