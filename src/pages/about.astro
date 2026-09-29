@@ -21,10 +21,8 @@ import portraitImage from '../assets/images/hassan-portrait.png';
 					<div class="hero-copy">
 						<h1 class="display-title">I design complex systems by aligning user goals, business strategy, and system logic.</h1>
 						<p class="hero-text">
-							I'm Hassan, a Product Designer & UX Architect with 12+ years of experience
-							designing AI-enabled, data-driven SaaS platforms and complex enterprise systems —
-							turning dense workflows and multi-module products into experiences people can
-							navigate with confidence.
+							I'm Hassan, a Product Designer & UX Architect with 12+ years turning dense,
+							multi-module SaaS products into experiences people navigate with confidence.
 						</p>
 					</div>
 					<div class="hero-portrait-wrap">
@@ -47,17 +45,14 @@ import portraitImage from '../assets/images/hassan-portrait.png';
 				</div>
 				<div class="story-block">
 					<p>
-						Over 12+ years I've worked across enterprise intelligence, solar/renewable energy
-						ERP, and healthcare platforms — domains where the design challenge is rarely just
-						about making something look good. More often, it's about structuring multi-module
-						SaaS systems that scale with operational complexity while staying usable under
-						real-world pressure.
+						12+ years structuring multi-module SaaS systems that scale with operational
+						complexity, without losing usability under real-world pressure.
 					</p>
-					<p>
-						I partner with product and engineering teams to translate complexity into
-						structured, scalable solutions — across AI-integrated systems, enterprise SaaS
-						products, intelligence platforms, healthcare systems, and renewable energy.
-					</p>
+					<ul class="tag-list">
+						<li>Enterprise Intelligence</li>
+						<li>Renewable Energy ERP</li>
+						<li>Healthcare Platforms</li>
+					</ul>
 				</div>
 			</section>
 
@@ -66,17 +61,15 @@ import portraitImage from '../assets/images/hassan-portrait.png';
 					<p class="section-kicker">How I Work</p>
 				</div>
 				<div class="story-block">
-					<p>
-						My process runs Understand → Research → Architect → Design → Validate → Deliver,
-						with AI woven through every stage rather than bolted on at the end — from
-						AI-assisted discovery and layout exploration to AI-supported usability analysis
-						and AI-generated documentation for faster developer handoff.
-					</p>
-					<p>
-						I believe every complex system can be structured: product experience sits at the
-						intersection of user goals, business goals, and system logic, and my job is finding
-						where those three actually overlap.
-					</p>
+					<p>AI woven through every stage, not bolted on at the end:</p>
+					<ul class="tag-list">
+						<li>Understand</li>
+						<li>Research</li>
+						<li>Architect</li>
+						<li>Design</li>
+						<li>Validate</li>
+						<li>Deliver</li>
+					</ul>
 				</div>
 			</section>
 
@@ -85,17 +78,11 @@ import portraitImage from '../assets/images/hassan-portrait.png';
 					<p class="section-kicker">Focus</p>
 				</div>
 				<div class="story-block">
-					<p>
-						AI-integrated product systems, business-aligned architecture, and cross-functional
-						product influence — designing intelligent workflows that enhance enterprise
-						decision-making, structuring multi-module SaaS systems that scale, and translating
-						constraints into structured interaction models alongside product and engineering.
-					</p>
-					<p>
-						I'm especially interested in data-dense dashboards, workflow tools, and AI-assisted
-						interfaces where reducing friction has a measurable impact on how confident people
-						feel using the system.
-					</p>
+					<ul class="focus-list">
+						<li><strong>AI-integrated product systems</strong> — intelligent workflows for enterprise decision-making</li>
+						<li><strong>Business-aligned architecture</strong> — multi-module SaaS systems that scale</li>
+						<li><strong>Cross-functional influence</strong> — constraints turned into structured interaction models</li>
+					</ul>
 				</div>
 			</section>
 		</main>
@@ -186,6 +173,41 @@ import portraitImage from '../assets/images/hassan-portrait.png';
 		display: grid;
 		gap: 1rem;
 		max-width: 52rem;
+	}
+
+	.tag-list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.6rem;
+	}
+
+	.tag-list li {
+		padding: 0.45rem 0.9rem;
+		border: 1px solid var(--border);
+		border-radius: 999px;
+		font-size: 0.92rem;
+		font-weight: 600;
+		color: var(--foreground);
+	}
+
+	.focus-list {
+		margin: 0;
+		padding-left: 1.25rem;
+		list-style: disc;
+		display: grid;
+		gap: 0.65rem;
+	}
+
+	.focus-list li {
+		font-size: 1.08rem;
+		line-height: 1.6;
+	}
+
+	.focus-list strong {
+		color: var(--foreground);
 	}
 
 	@media (max-width: 1100px) {
