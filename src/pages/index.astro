@@ -3,6 +3,15 @@ import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import { projects } from '../data/projects';
+import myProcess from '../assets/images/process/my-process.png';
+import ecosystemArchitecture from '../assets/images/process/ecosystem-architecture.png';
+import howIThink from '../assets/images/process/how-i-think.png';
+
+const processImages = [
+	{ img: myProcess, alt: 'How I work — a structured product process from discovery to delivery', caption: 'A structured product approach, from understanding constraints to delivery — with AI woven through every stage.' },
+	{ img: ecosystemArchitecture, alt: 'AI-agnostic ecosystem architecture — provider-swappable AI agents, skill-based workflows, persistent markdown context', caption: 'An AI-agnostic toolchain: provider-swappable agents, skill-based workflows, and persistent context across every project.' },
+	{ img: howIThink, alt: 'How I think — problem-solving approach', caption: 'How I break down ambiguity into decisions I can defend.' },
+];
 ---
 
 <Layout
@@ -22,6 +31,29 @@ import { projects } from '../data/projects';
 						12+ years designing AI-enabled SaaS platforms and enterprise systems — where clarity
 						and decision-making matter more than surface aesthetics.
 					</p>
+				</div>
+			</section>
+
+			<section class="process" id="process">
+				<p class="eyebrow">How I Work</p>
+				<h2 class="process-title">Process, not guesswork.</h2>
+				<div class="process-list">
+					{
+						processImages.map((item) => (
+							<figure class="process-item">
+								<Image
+									class="process-image"
+									src={item.img}
+									alt={item.alt}
+									loading="lazy"
+									decoding="async"
+									widths={[480, 720, 1080]}
+									sizes="(max-width: 980px) 100vw, 78rem"
+								/>
+								<figcaption>{item.caption}</figcaption>
+							</figure>
+						))
+					}
 				</div>
 			</section>
 
@@ -128,6 +160,42 @@ import { projects } from '../data/projects';
 		margin: 1rem 0 0;
 		color: var(--muted-foreground);
 		font-style: italic;
+	}
+
+	.process {
+		padding: 0 0 6rem;
+	}
+
+	.process-title {
+		margin: 0.5rem 0 2.5rem;
+		font-size: clamp(1.85rem, 2.4vw, 2.35rem);
+	}
+
+	.process-list {
+		display: grid;
+		gap: 3rem;
+	}
+
+	.process-item {
+		margin: 0;
+		display: grid;
+		gap: 1rem;
+	}
+
+	.process-image {
+		width: 100%;
+		height: auto;
+		display: block;
+		border: 1px solid var(--border);
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-medium);
+	}
+
+	.process-item figcaption {
+		max-width: 38rem;
+		color: var(--muted-foreground);
+		font-size: 1.05rem;
+		line-height: 1.55;
 	}
 
 	.projects-grid {
@@ -441,6 +509,10 @@ import { projects } from '../data/projects';
 
 		.hero {
 			padding: 4rem 0 4.5rem;
+		}
+
+		.process {
+			padding: 0 0 4rem;
 		}
 
 		.hero-text,
