@@ -4,8 +4,8 @@ import { testimonials } from '../data/testimonials';
 
 const stats = [
 	{ label: 'Years of experience', value: '12+', sub: 'across enterprise SaaS & AI systems' },
-	{ label: 'Products shipped', value: '10', sub: 'live case studies on this site' },
-	{ label: 'Client testimonials', value: '9', sub: 'from founders & teammates' },
+	{ label: 'Products shipped', value: '104', sub: 'across startups & enterprises' },
+	{ label: 'Clients served', value: '67', sub: 'founders, teams & enterprises' },
 ];
 
 const initials = (name: string) =>
@@ -75,7 +75,7 @@ const track = [...testimonials, ...testimonials];
 
 <style>
 	.testimonials {
-		padding: 3rem 0 6rem;
+		padding: 3rem 0 1rem;
 	}
 
 	.testimonials-header {
@@ -207,10 +207,11 @@ const track = [...testimonials, ...testimonials];
 	}
 
 	.testimonials-stats {
-		margin-top: clamp(2.5rem, 4vw, 5rem);
+		margin-top: clamp(4rem, 7vw, 8rem);
 		display: grid;
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 		gap: 2rem;
+		text-align: center;
 	}
 
 	.stat-label {
@@ -251,7 +252,7 @@ const track = [...testimonials, ...testimonials];
 
 	@media (max-width: 720px) {
 		.testimonials {
-			padding: 2rem 0 4rem;
+			padding: 2rem 0 1rem;
 		}
 
 		.testimonial-card {

@@ -9,6 +9,7 @@ export type SiteConfig = {
 	description: string;
 	siteUrl: string;
 	email: string;
+	phone: string;
 	locale: string;
 	authorName: string;
 	authorRole: string;
@@ -32,6 +33,7 @@ export const siteConfig: SiteConfig = {
 	// Set SITE_URL or PUBLIC_SITE_URL to keep canonicals, robots.txt, and the sitemap aligned in each environment.
 	siteUrl: normalizedSiteUrl,
 	email: 'hassan.mujtaba715@gmail.com',
+	phone: '+92 332 5662228',
 	locale: 'en-US',
 	authorName: 'Muhammad Hassan Mujtaba',
 	authorRole: 'Senior Product Designer',

@@ -140,11 +140,12 @@ const tools = [
 					{
 						experience.map((job) => (
 							<div class="job-entry">
-								<p>
-									<strong class="job-role">{job.role}</strong> · {job.company}
-									<br />
+								<div class="job-header">
+									<p class="job-title">
+										<strong class="job-role">{job.role}</strong> · {job.company}
+									</p>
 									<span class="job-period">{job.period}</span>
-								</p>
+								</div>
 								<p>{job.summary}</p>
 								{job.bullets.length > 0 && (
 									<ul class="job-bullets">
@@ -327,9 +328,28 @@ const tools = [
 		border-bottom: 0;
 	}
 
+	.job-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 0.6rem;
+	}
+
+	.job-title {
+		margin: 0;
+	}
+
 	.job-period {
+		flex: 0 0 auto;
+		padding: 0.3rem 0.85rem;
+		border: 1px solid var(--border);
+		border-radius: 999px;
+		background: var(--muted);
 		color: var(--muted-foreground);
-		font-size: 0.95rem;
+		font-size: 0.85rem;
+		font-weight: 600;
+		white-space: nowrap;
 	}
 
 	.job-bullets {

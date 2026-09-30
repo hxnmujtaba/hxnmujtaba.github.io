@@ -3,6 +3,16 @@ import { siteConfig } from '../config/site';
 
 const { showCta = true } = Astro.props;
 const currentYear = new Date().getFullYear();
+
+const linkedinLink = siteConfig.socialLinks.find((link) => link.label === 'LinkedIn');
+const behanceLink = siteConfig.socialLinks.find((link) => link.label === 'Behance');
+
+const contactButtons = [
+	{ label: 'Email', value: siteConfig.email, href: `mailto:${siteConfig.email}`, external: false },
+	{ label: 'Phone', value: siteConfig.phone, href: `tel:${siteConfig.phone.replace(/\s+/g, '')}`, external: false },
+	{ label: 'LinkedIn', value: 'hassanmujtaba', href: linkedinLink?.href ?? '#', external: true },
+	{ label: 'Behance', value: 'hxnmujtaba', href: behanceLink?.href ?? '#', external: true },
+];
 ---
 
 <footer class="shared-footer">
@@ -10,30 +20,54 @@ const currentYear = new Date().getFullYear();
 		{
 			showCta && (
 				<div class="shared-footer-cta">
-					<h2>Got something worth building? I'd love to hear about it.</h2>
-					<p>
-						Check my <a class="shared-footer-inline-link" href="/resume">resume</a> or reach out directly if something here sparked an idea.
-					</p>
-					<a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+					<div class="footer-cta-card">
+						<h2>Got something worth building? I'd love to hear about it.</h2>
+						<p>
+							Check my <a class="shared-footer-inline-link" href="/resume">resume</a> or reach out directly if something here sparked an idea.
+						</p>
+						<div class="footer-contact-grid">
+							{contactButtons.map((btn) => (
+								<a
+									class="footer-contact-btn"
+									href={btn.href}
+									target={btn.external ? '_blank' : undefined}
+									rel={btn.external ? 'noopener noreferrer' : undefined}
+								>
+									<span class="footer-contact-text">
+										<span class="footer-contact-label">{btn.label}</span>
+										<span class="footer-contact-value">{btn.value}</span>
+									</span>
+									{btn.external && (
+										<svg
+											class="footer-contact-external-icon"
+											width="14"
+											height="14"
+											viewBox="0 0 16 16"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg"
+											aria-hidden="true"
+										>
+											<path
+												d="M6.5 3.5H12.5M12.5 3.5V9.5M12.5 3.5L6.5 9.5M3.5 6.5V12.5H9.5"
+												stroke="currentColor"
+												stroke-width="1.4"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+											/>
+										</svg>
+									)}
+								</a>
+							))}
+						</div>
+					</div>
 				</div>
 			)
 		}
 
 		<div class="shared-footer-meta">
-			<div class="shared-footer-links">
-				{
-					siteConfig.socialLinks.map((link) => (
-						<a href={link.href} target="_blank" rel="noopener noreferrer">
-							{link.label}
-						</a>
-					))
-				}
-			</div>
-			<div class="shared-footer-note">
-				<div class="shared-footer-legal">
-					{siteConfig.legalLinks.map((link) => <a href={link.href}>{link.label}</a>)}
-				</div>
-				<p>&copy; {currentYear} {siteConfig.name}. All Rights Reserved.</p>
+			<p>&copy; {currentYear} {siteConfig.name}. All Rights Reserved.</p>
+			<div class="shared-footer-legal">
+				{siteConfig.legalLinks.map((link) => <a href={link.href}>{link.label}</a>)}
 			</div>
 		</div>
 	</div>
