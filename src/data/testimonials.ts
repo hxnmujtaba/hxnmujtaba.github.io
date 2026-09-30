@@ -27,7 +27,7 @@ export const testimonials: Testimonial[] = [
 		name: 'Muhammad Mansoor',
 		company: 'Product Manager at Toptal',
 		quote:
-			'Working with Hassan was a great experience. He combines strong UI/UX expertise with excellent project management, ensuring every project is well-planned, user-focused, and delivered efficiently. His ability to translate business requirements into intuitive designs makes him a valuable partner. Highly recommend him as a reliable, results-driven design partner.',
+			"I've known Hassan for over 7 years and worked with him directly for 4. He's a rare force multiplier, combining creative and strategic thinking with skilled execution across the full product lifecycle — from requirements and user journeys to prototypes and polished UI. Highly recommend him to any organization needing a designer who can drive ideas from concept to execution.",
 		avatar: muhammadMansoorAvatar,
 	},
 	{
