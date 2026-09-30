@@ -1,7 +1,11 @@
+import type { ImageMetadata } from 'astro';
+import mitchellReynoldsAvatar from '../assets/images/testimonials/mitchell-reynolds.png';
+
 export type Testimonial = {
 	name: string;
 	company: string;
 	quote: string;
+	avatar?: ImageMetadata;
 };
 
 export const testimonials: Testimonial[] = [
@@ -10,6 +14,7 @@ export const testimonials: Testimonial[] = [
 		company: 'Unwynd',
 		quote:
 			'Hassan is responsive all the time & is ready to put in extra work when needed. I appreciate the work he did on Unwynd, the app we developed together. My pitch deck which he created was very clean, & he managed my social media accounts well. He is a great teammate. Thank you Hassan.',
+		avatar: mitchellReynoldsAvatar,
 	},
 	{
 		name: 'Zunaira Javed',
@@ -18,16 +23,16 @@ export const testimonials: Testimonial[] = [
 			'Hassan is an experienced, energetic, dedicated and keeps up to date with the latest technologies. What makes Hassan stand out is his attention to detail, understanding the business acumen of projects and coming up with solutions based on that. His experience and quick grasp of the domain knowledge enables him to deliver results effectively. Working with Hassan has been fun.',
 	},
 	{
-		name: 'Anns Mustafa',
-		company: 'SolarInformatics',
-		quote:
-			'I had the pleasure of working with Hassan Mujtaba, he consistently impressed me with his UI/UX design expertise. Hassan has a keen eye for detail, creativity, and a deep understanding of user-centric design principles. His ability to translate complex requirements into intuitive, visually appealing interfaces made a significant impact on our projects. He is a great team player, always open to feedback and collaboration. His dedication to delivering high-quality designs within deadlines is commendable. I highly recommend Hassan for any UI/UX role—his skills and professionalism would be a valuable asset to any team.',
-	},
-	{
 		name: 'Syed Ahmed',
 		company: 'SolarInformatics',
 		quote:
 			'I enjoyed working with Hassan Mujtaba at Solarinformatics, where he made a big impact as a Sr Product Designer. He has a great talent for turning complex ideas into simple, user-friendly designs that improve the overall experience. I highly recommend Hassan to any team looking for a creative, skilled, and user-focused designer who brings ideas to life with great designs and smooth user experiences.',
+	},
+	{
+		name: 'Anns Mustafa',
+		company: 'SolarInformatics',
+		quote:
+			'I had the pleasure of working with Hassan Mujtaba, he consistently impressed me with his UI/UX design expertise. Hassan has a keen eye for detail, creativity, and a deep understanding of user-centric design principles. His ability to translate complex requirements into intuitive, visually appealing interfaces made a significant impact on our projects. He is a great team player, always open to feedback and collaboration. His dedication to delivering high-quality designs within deadlines is commendable. I highly recommend Hassan for any UI/UX role—his skills and professionalism would be a valuable asset to any team.',
 	},
 	{
 		name: 'Mukesh Kumar',
