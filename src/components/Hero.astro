@@ -39,8 +39,8 @@ import heroPhoto from '../assets/images/hero/mine-hero.png';
 
 			<div class="hero-accent-text-wrap">
 				<p class="hero-accent-text">
-					12+ years designing AI-enabled SaaS platforms and enterprise systems — where clarity
-					and decision-making matter more than surface aesthetics.
+					Seasoned AI-enabled SaaS platforms and Enterprise systems - where clarity and
+					decision-making matter more than surface aesthetics.
 				</p>
 			</div>
 
@@ -120,7 +120,7 @@ import heroPhoto from '../assets/images/hero/mine-hero.png';
 		align-items: center;
 		gap: 0.5rem;
 		padding: 0.5rem 0.75rem;
-		background: var(--card);
+		background: #eef1fc;
 		border: 1px solid var(--border);
 		border-radius: 999px;
 		font-size: 0.8rem;
@@ -128,6 +128,10 @@ import heroPhoto from '../assets/images/hero/mine-hero.png';
 		color: var(--foreground);
 		text-decoration: none;
 		transition: border-color 140ms ease;
+	}
+
+	:root[data-theme='dark'] .hero-pill {
+		background: var(--card);
 	}
 
 	.hero-pill:hover,
