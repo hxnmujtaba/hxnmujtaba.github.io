@@ -53,7 +53,7 @@ export const testimonials: Testimonial[] = [
 	},
 	{
 		name: 'Asif Khan',
-		company: 'Sr. Solution Architect at Global Rescue LLC',
+		company: 'Solution Architect at Global Rescue LLC',
 		quote:
 			"Hassan has been a driving force of UI/UX innovation on our project for over 3 years. He grasps business requirements, drills them to the core, and delivers neat, professional designs that often exceed expectations and provide great usability. Highly dedicated, with strong project management skills. I highly recommend him as a true asset to any team.",
 		avatar: asifKhanAvatar,
