@@ -494,7 +494,7 @@ const homepageProjects = homepageOrder.map((name) => projects.find((p) => p.name
 
 	@media (max-width: 720px) {
 		.page {
-			width: min(calc(100% - 1.5rem), 78rem);
+			width: min(calc(100% - 2.5rem), 78rem);
 			padding-top: 1rem;
 		}
 
@@ -513,6 +513,7 @@ const homepageProjects = homepageOrder.map((name) => projects.find((p) => p.name
 
 		.project-visual {
 			height: auto;
+			min-height: 0;
 			overflow: visible;
 			align-items: start;
 		}

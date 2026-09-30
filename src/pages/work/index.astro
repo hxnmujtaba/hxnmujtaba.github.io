@@ -241,6 +241,12 @@ const visibleProjects = projects.slice(0, workPageSize);
 			background-color 120ms ease;
 	}
 
+	.actions a {
+		background: var(--foreground);
+		color: var(--background);
+		border-color: var(--foreground);
+	}
+
 	.pagination-link {
 		width: 3.25rem;
 		height: 3.25rem;
@@ -250,7 +256,11 @@ const visibleProjects = projects.slice(0, workPageSize);
 	}
 
 	.actions a:hover,
-	.actions a:focus-visible,
+	.actions a:focus-visible {
+		transform: translateY(-1px);
+		box-shadow: var(--shadow-medium);
+	}
+
 	.pagination-link:hover,
 	.pagination-link:focus-visible {
 		transform: translateY(-1px);
@@ -405,7 +415,7 @@ const visibleProjects = projects.slice(0, workPageSize);
 
 	@media (max-width: 720px) {
 		.works-page {
-			width: min(calc(100% - 1.5rem), 78rem);
+			width: min(calc(100% - 2.5rem), 78rem);
 			padding-top: 1rem;
 		}
 

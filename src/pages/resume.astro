@@ -97,6 +97,27 @@ const tools = [
 						healthcare platforms.
 					</p>
 				</div>
+
+				<div class="resume-download-row">
+					<a class="resume-download-cta" href="/files/hassan-mujtaba-resume.pdf" download>
+						Download Resume
+						<svg
+							width="16"
+							height="16"
+							viewBox="0 0 16 16"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M8 2.5v8M8 10.5L5 7.5M8 10.5l3-3M3 13.5h10"
+								stroke="currentColor"
+								stroke-width="1.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+						</svg>
+					</a>
+				</div>
 			</section>
 
 			<section class="editorial-section">
@@ -226,6 +247,33 @@ const tools = [
 		margin-top: 1.75rem;
 	}
 
+	.resume-download-row {
+		display: flex;
+		margin-top: 2rem;
+	}
+
+	.resume-download-cta {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.85rem 1.5rem;
+		background: var(--foreground);
+		color: var(--background);
+		border-radius: 999px;
+		font-size: 0.95rem;
+		font-weight: 600;
+		text-decoration: none;
+		transition:
+			transform 140ms ease,
+			box-shadow 140ms ease;
+	}
+
+	.resume-download-cta:hover,
+	.resume-download-cta:focus-visible {
+		transform: translateY(-2px);
+		box-shadow: var(--shadow-medium);
+	}
+
 	.hero-text,
 	.story-block p {
 		font-size: 1.08rem;
@@ -303,7 +351,7 @@ const tools = [
 
 	@media (max-width: 720px) {
 		.page {
-			width: min(calc(100% - 1.5rem), 78rem);
+			width: min(calc(100% - 2.5rem), 78rem);
 			padding-top: 1rem;
 		}
 
