@@ -4,6 +4,22 @@ import Layout from '../../layouts/Layout.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import { siteConfig } from '../../config/site';
 import coverImage from '../../assets/images/other-projects/soapsuds.png';
+import loginImage from '../../assets/images/case-studies/soapsuds-login.png';
+import onboarding1Image from '../../assets/images/case-studies/soapsuds-onboarding-1.png';
+import onboarding2Image from '../../assets/images/case-studies/soapsuds-onboarding-2.png';
+import onboarding3Image from '../../assets/images/case-studies/soapsuds-onboarding-3.png';
+import onboarding4Image from '../../assets/images/case-studies/soapsuds-onboarding-4.png';
+import visitsImage from '../../assets/images/case-studies/soapsuds-visits.png';
+import captureRecordingImage from '../../assets/images/case-studies/soapsuds-capture-recording.png';
+import captureNewRecordingImage from '../../assets/images/case-studies/soapsuds-capture-new-recording.png';
+import captureUploadingImage from '../../assets/images/case-studies/soapsuds-capture-uploading.png';
+import visitDetailNoteImage from '../../assets/images/case-studies/soapsuds-visit-detail-note.png';
+import visitDetailTranscriptionImage from '../../assets/images/case-studies/soapsuds-visit-detail-transcription.png';
+import visitDetailDiagnosisImage from '../../assets/images/case-studies/soapsuds-visit-detail-diagnosis.png';
+import templatesImage from '../../assets/images/case-studies/soapsuds-templates.png';
+import templatesAddPopupImage from '../../assets/images/case-studies/soapsuds-templates-add-popup.png';
+import settingsAccountImage from '../../assets/images/case-studies/soapsuds-settings-account.png';
+import settingsNotePreferencesImage from '../../assets/images/case-studies/soapsuds-settings-note-preferences.png';
 
 const highlights = [
 	{ label: 'Role', value: 'End-to-End Product Design' },
@@ -123,6 +139,83 @@ const caseStudySchema = [
 					<ul class="outcome-list">
 						{role.map((item) => <li>{item}</li>)}
 					</ul>
+				</div>
+			</section>
+
+			<section class="editorial-section" id="login">
+				<div class="section-rail">
+					<p class="section-kicker">Login</p>
+				</div>
+				<div class="story-block">
+					<Image class="single-image" src={loginImage} alt="SOAPsuds login screen" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+				</div>
+			</section>
+
+			<section class="editorial-section" id="onboarding">
+				<div class="section-rail">
+					<p class="section-kicker">Onboarding</p>
+				</div>
+				<div class="story-block">
+					<p>Guided setup — including the option to create a note from an existing upload:</p>
+					<Image class="single-image" src={onboarding1Image} alt="SOAPsuds onboarding screen 1" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+					<Image class="single-image" src={onboarding2Image} alt="SOAPsuds onboarding screen 2" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+					<Image class="single-image" src={onboarding3Image} alt="SOAPsuds onboarding screen 3" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+					<Image class="single-image" src={onboarding4Image} alt="SOAPsuds onboarding create note with existing upload screen" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+				</div>
+			</section>
+
+			<section class="editorial-section" id="visits">
+				<div class="section-rail">
+					<p class="section-kicker">Visits</p>
+				</div>
+				<div class="story-block">
+					<Image class="single-image" src={visitsImage} alt="SOAPsuds visits list screen" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+				</div>
+			</section>
+
+			<section class="editorial-section" id="capture-conversation">
+				<div class="section-rail">
+					<p class="section-kicker">Capture Conversation</p>
+				</div>
+				<div class="story-block">
+					<p>Recording, uploading, and processing patient visit conversations:</p>
+					<Image class="single-image" src={captureRecordingImage} alt="SOAPsuds capture conversation recording screen" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+					<Image class="single-image" src={captureNewRecordingImage} alt="SOAPsuds new recording screen" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+					<Image class="single-image" src={captureUploadingImage} alt="SOAPsuds uploading conversation screen" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+				</div>
+			</section>
+
+			<section class="editorial-section" id="visit-detail">
+				<div class="section-rail">
+					<p class="section-kicker">Visit Detail / SOAP Note</p>
+				</div>
+				<div class="story-block">
+					<p>Structured SOAP note with transcription and AI clinical diagnosis support:</p>
+					<Image class="single-image" src={visitDetailNoteImage} alt="SOAPsuds visit detail SOAP note screen" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+					<Image class="single-image" src={visitDetailTranscriptionImage} alt="SOAPsuds visit detail SOAP note transcription screen" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+					<Image class="single-image" src={visitDetailDiagnosisImage} alt="SOAPsuds visit detail AI clinical diagnosis empty state screen" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+				</div>
+			</section>
+
+			<section class="editorial-section" id="templates">
+				<div class="section-rail">
+					<p class="section-kicker">Templates</p>
+				</div>
+				<div class="story-block">
+					<p>System templates library with the add-new-template flow:</p>
+					<Image class="single-image" src={templatesImage} alt="SOAPsuds system templates screen" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+					<Image class="single-image" src={templatesAddPopupImage} alt="SOAPsuds add new template popup screen" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+				</div>
+			</section>
+
+			<section class="editorial-section" id="settings">
+				<div class="section-rail">
+					<p class="section-kicker">Settings</p>
+				</div>
+				<div class="story-block">
+					<p>Account profile and note-preference consent settings:</p>
+					<Image class="single-image" src={settingsAccountImage} alt="SOAPsuds account settings update profile information screen" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+					<Image class="single-image" src={settingsNotePreferencesImage} alt="SOAPsuds note preferences consent settings screen" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
 				</div>
 			</section>
 
@@ -269,6 +362,14 @@ const caseStudySchema = [
 		max-width: 46rem;
 		margin: 0 auto;
 		display: block;
+		border: 1px solid var(--border);
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-large);
+	}
+
+	.single-image {
+		width: 100%;
+		margin-top: 0.5rem;
 		border: 1px solid var(--border);
 		border-radius: 1.5rem;
 		box-shadow: var(--shadow-large);

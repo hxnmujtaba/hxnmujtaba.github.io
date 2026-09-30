@@ -4,6 +4,11 @@ import Layout from '../../layouts/Layout.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import { siteConfig } from '../../config/site';
 import coverImage from '../../assets/images/other-projects/jotai.png';
+import meetingsImage from '../../assets/images/case-studies/jotai-meetings.png';
+import meetingsImage2 from '../../assets/images/case-studies/jotai-meetings-2.png';
+import calendarImage from '../../assets/images/case-studies/jotai-calendar.png';
+import noteDetailImage from '../../assets/images/case-studies/jotai-note-detail.png';
+import referEarnImage from '../../assets/images/case-studies/jotai-refer-earn.png';
 
 const highlights = [
 	{ label: 'Role', value: 'Lead Product Designer' },
@@ -122,6 +127,47 @@ const caseStudySchema = [
 					<ul class="outcome-list">
 						{role.map((item) => <li>{item}</li>)}
 					</ul>
+				</div>
+			</section>
+
+			<section class="editorial-section" id="meetings">
+				<div class="section-rail">
+					<p class="section-kicker">Meeting Intelligence</p>
+				</div>
+				<div class="story-block">
+					<p>Structured, searchable meeting records with AI-generated summaries and chat:</p>
+					<Image class="single-image" src={meetingsImage} alt="Jot.ai meetings list screen" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+					<Image class="single-image" src={meetingsImage2} alt="Jot.ai meeting detail screen" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+				</div>
+			</section>
+
+			<section class="editorial-section" id="calendar">
+				<div class="section-rail">
+					<p class="section-kicker">Calendar</p>
+				</div>
+				<div class="story-block">
+					<p>A unified view of upcoming and past meetings, synced across the workspace:</p>
+					<Image class="single-image" src={calendarImage} alt="Jot.ai calendar screen" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+				</div>
+			</section>
+
+			<section class="editorial-section" id="note-detail">
+				<div class="section-rail">
+					<p class="section-kicker">Note Detail</p>
+				</div>
+				<div class="story-block">
+					<p>AI-generated summary alongside a conversational chat layer for deeper follow-up:</p>
+					<Image class="single-image" src={noteDetailImage} alt="Jot.ai note detail with summary and AI chat screen" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+				</div>
+			</section>
+
+			<section class="editorial-section" id="refer-earn">
+				<div class="section-rail">
+					<p class="section-kicker">Refer &amp; Earn</p>
+				</div>
+				<div class="story-block">
+					<p>A built-in referral system to drive organic growth:</p>
+					<Image class="single-image" src={referEarnImage} alt="Jot.ai refer and earn screen" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
 				</div>
 			</section>
 
@@ -262,6 +308,14 @@ const caseStudySchema = [
 		max-width: 46rem;
 		margin: 0 auto;
 		display: block;
+		border: 1px solid var(--border);
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-large);
+	}
+
+	.single-image {
+		width: 100%;
+		margin-top: 0.5rem;
 		border: 1px solid var(--border);
 		border-radius: 1.5rem;
 		box-shadow: var(--shadow-large);

@@ -340,7 +340,8 @@ const visibleProjects = projects.slice(0, workPageSize);
 	}
 
 	.other-work-card {
-		display: grid;
+		display: flex;
+		flex-direction: column;
 		gap: 0.9rem;
 		padding: 1.1rem;
 		background: var(--card);
@@ -354,6 +355,12 @@ const visibleProjects = projects.slice(0, workPageSize);
 		display: block;
 		border-radius: 0.75rem;
 		box-shadow: var(--shadow-medium);
+	}
+
+	.other-work-copy {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
 	}
 
 	.other-work-copy h3 {
@@ -384,7 +391,8 @@ const visibleProjects = projects.slice(0, workPageSize);
 		display: flex;
 		flex-wrap: wrap;
 		gap: 1rem;
-		margin-top: 0.75rem;
+		margin-top: auto;
+		padding-top: 0.75rem;
 	}
 
 	.other-work-links a {

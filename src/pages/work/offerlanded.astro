@@ -4,6 +4,14 @@ import Layout from '../../layouts/Layout.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import { siteConfig } from '../../config/site';
 import coverImage from '../../assets/images/offerlanded-cover.png';
+import jobTrackerCardImage from '../../assets/images/case-studies/offerlanded-job-tracker-card.png';
+import jobTrackerTableImage from '../../assets/images/case-studies/offerlanded-job-tracker-table.png';
+import jobDetailChecklistsImage from '../../assets/images/case-studies/offerlanded-job-detail-checklists.png';
+import jobDetailContactsImage from '../../assets/images/case-studies/offerlanded-job-detail-contacts.png';
+import jobDetailNotesImage from '../../assets/images/case-studies/offerlanded-job-detail-notes.png';
+import jobDetailSkillsImage from '../../assets/images/case-studies/offerlanded-job-detail-skills.png';
+import jobDetailSkillsHighlightedImage from '../../assets/images/case-studies/offerlanded-job-detail-skills-highlighted.png';
+import interviewNavigatorImage from '../../assets/images/case-studies/offerlanded-interview-navigator.png';
 
 const highlights = [
 	{ label: 'Role', value: 'End-to-End Product Design' },
@@ -125,6 +133,41 @@ const caseStudySchema = [
 					<ul class="outcome-list">
 						{role.map((item) => <li>{item}</li>)}
 					</ul>
+				</div>
+			</section>
+
+			<section class="editorial-section" id="job-tracker">
+				<div class="section-rail">
+					<p class="section-kicker">Job Tracker</p>
+				</div>
+				<div class="story-block">
+					<p>Card and table views for tracking applications across every stage of the pipeline:</p>
+					<Image class="single-image" src={jobTrackerCardImage} alt="OfferLanded job tracker card view screen" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+					<Image class="single-image" src={jobTrackerTableImage} alt="OfferLanded job tracker table view with rows selected screen" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+				</div>
+			</section>
+
+			<section class="editorial-section" id="job-detail">
+				<div class="section-rail">
+					<p class="section-kicker">Job Detail</p>
+				</div>
+				<div class="story-block">
+					<p>Per-application detail — checklists, contacts, notes, and skill-match analysis:</p>
+					<Image class="single-image" src={jobDetailChecklistsImage} alt="OfferLanded job detail checklists screen" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+					<Image class="single-image" src={jobDetailContactsImage} alt="OfferLanded job detail contacts screen" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+					<Image class="single-image" src={jobDetailNotesImage} alt="OfferLanded job detail notes screen" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+					<Image class="single-image" src={jobDetailSkillsImage} alt="OfferLanded job detail skills screen" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+					<Image class="single-image" src={jobDetailSkillsHighlightedImage} alt="OfferLanded job detail skills highlighted screen" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+				</div>
+			</section>
+
+			<section class="editorial-section" id="interview-navigator">
+				<div class="section-rail">
+					<p class="section-kicker">Interview Navigator</p>
+				</div>
+				<div class="story-block">
+					<p>Settings for mock interview sessions and preparation flow:</p>
+					<Image class="single-image" src={interviewNavigatorImage} alt="OfferLanded interview navigator settings screen" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
 				</div>
 			</section>
 
@@ -272,6 +315,14 @@ const caseStudySchema = [
 		max-width: 46rem;
 		margin: 0 auto;
 		display: block;
+		border: 1px solid var(--border);
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-large);
+	}
+
+	.single-image {
+		width: 100%;
+		margin-top: 0.5rem;
 		border: 1px solid var(--border);
 		border-radius: 1.5rem;
 		box-shadow: var(--shadow-large);

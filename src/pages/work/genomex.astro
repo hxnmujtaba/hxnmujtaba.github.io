@@ -4,22 +4,28 @@ import Layout from '../../layouts/Layout.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import { siteConfig } from '../../config/site';
 import coverImage from '../../assets/images/case-studies/genomex-cover.png';
-import detailsImage from '../../assets/images/case-studies/genomex-details.png';
+import problemCard1 from '../../assets/images/case-studies/genomex-problem-card-1.png';
+import problemCard2 from '../../assets/images/case-studies/genomex-problem-card-2.png';
+import problemCard3 from '../../assets/images/case-studies/genomex-problem-card-3.png';
+import problemCard4 from '../../assets/images/case-studies/genomex-problem-card-4.png';
+import problemCard5 from '../../assets/images/case-studies/genomex-problem-card-5.png';
+import problemCard6 from '../../assets/images/case-studies/genomex-problem-card-6.png';
 import login1 from '../../assets/images/case-studies/genomex-login-1.png';
 import login2 from '../../assets/images/case-studies/genomex-login-2.png';
 import login3 from '../../assets/images/case-studies/genomex-login-3.png';
+import signup1 from '../../assets/images/case-studies/genomex-signup-1.png';
+import signup2 from '../../assets/images/case-studies/genomex-signup-2.png';
+import signup3 from '../../assets/images/case-studies/genomex-signup-3.png';
+import setup1 from '../../assets/images/case-studies/genomex-setup-1.png';
+import setup2 from '../../assets/images/case-studies/genomex-setup-2.png';
+import setup3 from '../../assets/images/case-studies/genomex-setup-3.png';
 import dashboardToday from '../../assets/images/case-studies/genomex-dashboard-today.png';
 import dashboardWeekly from '../../assets/images/case-studies/genomex-dashboard-weekly.png';
 import dashboardMonthly from '../../assets/images/case-studies/genomex-dashboard-monthly.png';
 import progress1 from '../../assets/images/case-studies/genomex-progress-1.png';
 import progress2 from '../../assets/images/case-studies/genomex-progress-2.png';
 import progress3 from '../../assets/images/case-studies/genomex-progress-3.png';
-import progress4 from '../../assets/images/case-studies/genomex-progress-4.png';
-import progress5 from '../../assets/images/case-studies/genomex-progress-5.png';
-import progress6 from '../../assets/images/case-studies/genomex-progress-6.png';
-import progress7 from '../../assets/images/case-studies/genomex-progress-7.png';
-import progress8 from '../../assets/images/case-studies/genomex-progress-8.png';
-import progress9 from '../../assets/images/case-studies/genomex-progress-9.png';
+import moreScreen from '../../assets/images/case-studies/genomex-more.png';
 
 const highlights = [
 	{ label: 'Role', value: 'End-to-End Product Design' },
@@ -58,10 +64,26 @@ const designDecisions = [
 
 const analytics = ['Current Readiness to Goal', 'Weekly Progress Overview', 'Recovery Score & Training Load Trends'];
 
+const problemCards = [problemCard1, problemCard2, problemCard3, problemCard4, problemCard5, problemCard6].map(
+	(img, i) => ({ img, alt: `GenomeX problem statement card ${i + 1}` })
+);
+
 const loginScreens = [
-	{ img: login1, alt: 'GenomeX login with social and phone sign-in options' },
-	{ img: login2, alt: 'GenomeX phone number login' },
-	{ img: login3, alt: 'GenomeX email login' },
+	{ img: login1, alt: 'GenomeX login screen 1' },
+	{ img: login2, alt: 'GenomeX login screen 2' },
+	{ img: login3, alt: 'GenomeX login screen 3' },
+];
+
+const signupScreens = [
+	{ img: signup1, alt: 'GenomeX sign up screen 1' },
+	{ img: signup2, alt: 'GenomeX sign up screen 2' },
+	{ img: signup3, alt: 'GenomeX sign up screen 3' },
+];
+
+const setupScreens = [
+	{ img: setup1, alt: 'GenomeX setup workout plan screen 1' },
+	{ img: setup2, alt: 'GenomeX setup workout plan screen 2' },
+	{ img: setup3, alt: 'GenomeX setup workout plan screen 3' },
 ];
 
 const dashboardScreens = [
@@ -70,7 +92,7 @@ const dashboardScreens = [
 	{ img: dashboardMonthly, alt: 'GenomeX dashboard, monthly view' },
 ];
 
-const progressScreens = [progress1, progress2, progress3, progress4, progress5, progress6, progress7, progress8, progress9].map(
+const progressScreens = [progress1, progress2, progress3].map(
 	(img, i) => ({ img, alt: `GenomeX My Progress screen ${i + 1}` }),
 );
 
@@ -195,8 +217,17 @@ const caseStudySchema = [
 				</div>
 			</section>
 
-			<section class="lead-image-section">
-				<Image class="single-image" src={detailsImage} alt="GenomeX design challenges and AI-assisted solutions breakdown" loading="lazy" decoding="async" widths={[480, 720, 960]} sizes="(max-width: 78rem) 100vw, 60rem" />
+			<section class="editorial-section editorial-section-no-divider" id="problem-statement">
+				<div class="section-rail">
+					<p class="section-kicker">Problem Statement</p>
+				</div>
+				<div class="story-block">
+					<div class="gallery-grid">
+						{problemCards.map((card) => (
+							<Image class="problem-card-image" src={card.img} alt={card.alt} loading="lazy" decoding="async" widths={[480, 640, 860]} sizes="(max-width: 560px) 100vw, 50vw" />
+						))}
+					</div>
+				</div>
 			</section>
 
 			<section class="editorial-section" id="analytics">
@@ -227,6 +258,32 @@ const caseStudySchema = [
 				</div>
 			</section>
 
+			<section class="editorial-section" id="signup">
+				<div class="section-rail">
+					<p class="section-kicker">Sign Up</p>
+				</div>
+				<div class="story-block">
+					<div class="gallery-grid gallery-grid-3">
+						{signupScreens.map((item) => (
+							<Image class="gallery-image" src={item.img} alt={item.alt} loading="lazy" decoding="async" widths={[320, 480, 640]} sizes="(max-width: 860px) 50vw, 33vw" />
+						))}
+					</div>
+				</div>
+			</section>
+
+			<section class="editorial-section" id="setup-workout-plan">
+				<div class="section-rail">
+					<p class="section-kicker">Setup Workout Plan</p>
+				</div>
+				<div class="story-block">
+					<div class="gallery-grid gallery-grid-3">
+						{setupScreens.map((item) => (
+							<Image class="gallery-image" src={item.img} alt={item.alt} loading="lazy" decoding="async" widths={[320, 480, 640]} sizes="(max-width: 860px) 50vw, 33vw" />
+						))}
+					</div>
+				</div>
+			</section>
+
 			<section class="editorial-section" id="dashboard">
 				<div class="section-rail">
 					<p class="section-kicker">Dashboard</p>
@@ -249,6 +306,17 @@ const caseStudySchema = [
 						{progressScreens.map((item) => (
 							<Image class="gallery-image" src={item.img} alt={item.alt} loading="lazy" decoding="async" widths={[320, 480, 640]} sizes="(max-width: 860px) 50vw, 33vw" />
 						))}
+					</div>
+				</div>
+			</section>
+
+			<section class="editorial-section" id="more">
+				<div class="section-rail">
+					<p class="section-kicker">More</p>
+				</div>
+				<div class="story-block">
+					<div class="gallery-grid gallery-grid-3">
+						<Image class="gallery-image" src={moreScreen} alt="GenomeX more screen" loading="lazy" decoding="async" widths={[320, 480, 640]} sizes="(max-width: 860px) 50vw, 33vw" />
 					</div>
 				</div>
 			</section>
@@ -393,6 +461,11 @@ const caseStudySchema = [
 		border-radius: 2rem;
 	}
 
+	.problem-card-image {
+		width: 100%;
+		display: block;
+	}
+
 	.gallery-grid {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -428,7 +501,7 @@ const caseStudySchema = [
 		border-bottom: 1px solid var(--border);
 	}
 
-	#my-progress {
+	#more {
 		border-bottom: 0;
 	}
 
