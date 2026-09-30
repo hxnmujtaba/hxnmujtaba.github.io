@@ -26,6 +26,7 @@ const homepageProjects = homepageOrder.map((name) => projects.find((p) => p.name
 			<ToolsMarquee />
 
 			<section class="projects" id="work">
+				<h2 class="projects-heading">Featured Projects</h2>
 				<div class="projects-grid">
 					{
 						homepageProjects.map((project, index) => (
@@ -185,6 +186,16 @@ const homepageProjects = homepageOrder.map((name) => projects.find((p) => p.name
 
 	.process-diagram--architecture {
 		max-width: 66rem;
+	}
+
+	.projects {
+		padding-top: 4rem;
+	}
+
+	.projects-heading {
+		margin: 0 0 2rem;
+		font-size: clamp(1.85rem, 2.4vw, 2.35rem);
+		text-align: center;
 	}
 
 	.projects-grid {

@@ -5,7 +5,7 @@ import { testimonials } from '../data/testimonials';
 const stats = [
 	{ label: 'Years of experience', value: '12+', sub: 'across enterprise SaaS & AI systems' },
 	{ label: 'Products shipped', value: '10', sub: 'live case studies on this site' },
-	{ label: 'Client testimonials', value: '6', sub: 'from founders & teammates' },
+	{ label: 'Client testimonials', value: '9', sub: 'from founders & teammates' },
 ];
 
 const initials = (name: string) =>
@@ -195,6 +195,26 @@ const initials = (name: string) =>
 		margin: 0.25rem 0 0;
 		font-size: 0.95rem;
 		color: #a3acb9;
+	}
+
+	:root[data-theme='dark'] .testimonial-card {
+		background: #1e293b;
+	}
+
+	:root[data-theme='dark'] .testimonial-quote {
+		color: #e5e9f0;
+	}
+
+	:root[data-theme='dark'] .testimonial-footer {
+		background: #172033;
+	}
+
+	:root[data-theme='dark'] .testimonial-name {
+		color: #f5f7fb;
+	}
+
+	:root[data-theme='dark'] .testimonial-company {
+		color: #98a2b3;
 	}
 
 	@media (max-width: 980px) {

@@ -4,7 +4,7 @@ export type Tool = {
 };
 
 export const tools: Tool[] = [
-	{ name: 'Figma', icon: '/images/tools/figma.svg' },
+	{ name: 'Figma', icon: '/images/tools/figma-color.svg' },
 	{ name: 'Adobe XD', icon: '/images/tools/adobexd-color.webp' },
 	{ name: 'Adobe Suite', icon: '/images/tools/adobe-color.svg' },
 	{ name: 'Sketch', icon: '/images/tools/sketch.svg' },
