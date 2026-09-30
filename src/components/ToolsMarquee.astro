@@ -1,0 +1,131 @@
+---
+import { tools } from '../data/tools';
+
+const track = [...tools, ...tools];
+---
+
+<section class="tools-marquee" aria-label="Tools I use">
+	<div class="tools-marquee-fade tools-marquee-fade--left" aria-hidden="true"></div>
+	<div class="tools-marquee-fade tools-marquee-fade--right" aria-hidden="true"></div>
+
+	<div class="tools-marquee-track">
+		{
+			track.map((tool) => (
+				<div class="tool-item">
+					{tool.icon ? (
+						<img class="tool-icon" src={tool.icon} alt="" loading="lazy" decoding="async" />
+					) : null}
+					<span class="tool-name">{tool.name}</span>
+				</div>
+			))
+		}
+	</div>
+</section>
+
+<style>
+	.tools-marquee {
+		position: relative;
+		width: 100vw;
+		left: 50%;
+		right: 50%;
+		margin-left: -50vw;
+		margin-right: -50vw;
+		overflow: hidden;
+		padding: 1.5rem 0;
+		background: var(--muted);
+		border-top: 1px solid var(--border);
+		border-bottom: 1px solid var(--border);
+	}
+
+	.tools-marquee-fade {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 6rem;
+		z-index: 2;
+		pointer-events: none;
+	}
+
+	.tools-marquee-fade--left {
+		left: 0;
+		background: linear-gradient(to right, var(--muted), transparent);
+	}
+
+	.tools-marquee-fade--right {
+		right: 0;
+		background: linear-gradient(to left, var(--muted), transparent);
+	}
+
+	.tools-marquee-track {
+		display: flex;
+		align-items: center;
+		width: max-content;
+		animation: tools-scroll 32s linear infinite;
+	}
+
+	.tool-item {
+		display: flex;
+		align-items: center;
+		gap: 0.6rem;
+		padding: 0 2.5rem;
+		flex-shrink: 0;
+	}
+
+	.tool-icon {
+		width: 1.6rem;
+		height: 1.6rem;
+		filter: grayscale(100%) opacity(0.55);
+		transition: filter 160ms ease;
+	}
+
+	.tool-item:hover .tool-icon {
+		filter: grayscale(0%) opacity(1);
+	}
+
+	.tool-name {
+		font-size: 0.95rem;
+		font-weight: 600;
+		letter-spacing: -0.01em;
+		color: var(--muted-foreground);
+		white-space: nowrap;
+		transition: color 160ms ease;
+	}
+
+	.tool-item:hover .tool-name {
+		color: var(--foreground);
+	}
+
+	@keyframes tools-scroll {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(-50%);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.tools-marquee-track {
+			animation: none;
+		}
+	}
+
+	@media (max-width: 720px) {
+		.tools-marquee {
+			padding: 1.15rem 0;
+		}
+
+		.tool-item {
+			padding: 0 1.5rem;
+		}
+
+		.tool-icon {
+			width: 1.35rem;
+			height: 1.35rem;
+		}
+
+		.tool-name {
+			font-size: 0.85rem;
+		}
+	}
+</style>
