@@ -127,7 +127,7 @@ import heroPhoto from '../assets/images/hero/mine-hero.png';
 		font-weight: 500;
 		color: var(--foreground);
 		text-decoration: none;
-		transition: border-color 140ms ease;
+		transition: background-color 140ms ease;
 	}
 
 	:root[data-theme='dark'] .hero-pill {
@@ -136,7 +136,12 @@ import heroPhoto from '../assets/images/hero/mine-hero.png';
 
 	.hero-pill:hover,
 	.hero-pill:focus-visible {
-		border-color: var(--border-strong);
+		background: #e2e7f9;
+	}
+
+	:root[data-theme='dark'] .hero-pill:hover,
+	:root[data-theme='dark'] .hero-pill:focus-visible {
+		background: #29384d;
 	}
 
 	.hero-pill-divider {
