@@ -65,15 +65,25 @@ const experience = [
 	},
 ];
 
+const specialties = [
+	'AI-integrated systems',
+	'Enterprise SaaS',
+	'Intelligence platforms',
+	'Healthcare systems',
+	'Renewable energy',
+];
+
 const tools = [
 	'Figma',
 	'Balsamiq',
 	'Adobe Creative Suite',
 	'Sketch',
-	'Microsoft Teams',
 	'Trello',
 	'Slack',
 	'ChatGPT',
+	'Claude',
+	'Cursor',
+	'Codex',
 ];
 ---
 
@@ -126,7 +136,12 @@ const tools = [
 				</div>
 				<div class="story-block">
 					<p><strong class="snapshot-label">Role:</strong> Senior Product Designer / UX Architect</p>
-					<p><strong class="snapshot-label">Specialties:</strong> AI-integrated systems, enterprise SaaS, intelligence platforms, healthcare systems, renewable energy</p>
+					<div class="snapshot-specialties">
+						<strong class="snapshot-label">Specialties:</strong>
+						<ul class="tag-list tag-list--specialties">
+							{specialties.map((specialty) => <li>{specialty}</li>)}
+						</ul>
+					</div>
 					<p><strong class="snapshot-label">Contact:</strong> <a href="mailto:hassan.mujtaba715@gmail.com">hassan.mujtaba715@gmail.com</a> · <a href="tel:+923325662228">+92 332 5662228</a></p>
 					<p><strong class="snapshot-label">LinkedIn:</strong> <a href="https://www.linkedin.com/in/hassanmujtaba/" target="_blank" rel="noopener">linkedin.com/in/hassanmujtaba</a></p>
 				</div>
@@ -308,6 +323,23 @@ const tools = [
 
 	.snapshot-label {
 		color: #3b82f6;
+	}
+
+	.snapshot-specialties {
+		display: flex;
+		align-items: baseline;
+		flex-wrap: wrap;
+		gap: 0.6rem;
+	}
+
+	.snapshot-specialties .tag-list {
+		flex: 1 1 auto;
+	}
+
+	.tag-list--specialties li {
+		background: color-mix(in srgb, #3b82f6 14%, transparent);
+		border-color: color-mix(in srgb, #3b82f6 45%, var(--border));
+		color: color-mix(in srgb, #3b82f6 70%, var(--foreground));
 	}
 
 	.job-role {
