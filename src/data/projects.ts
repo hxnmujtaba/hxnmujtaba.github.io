@@ -62,6 +62,18 @@ export const projects: Project[] = [
 		imageClass: 'project-preview-image',
 	},
 	{
+		name: 'Pretelio',
+		title: 'Retail intelligence & loyalty platform',
+		description:
+			'A scalable system for dynamic pricing, localized offers, and customer engagement across multi-store retail ecosystems.',
+		background: 'seafoam',
+		variant: 'desktop',
+		href: '/work/pretelio',
+		image: pretelioImage,
+		alt: 'Pretelio retail intelligence platform preview',
+		imageClass: 'project-preview-image',
+	},
+	{
 		name: 'Medicra365',
 		title: 'Doctor-facing healthcare & patient management platform',
 		description:
@@ -95,18 +107,6 @@ export const projects: Project[] = [
 		href: '/work/soapsuds',
 		image: soapsudsImage,
 		alt: 'SOAPsuds clinical notes platform preview',
-		imageClass: 'project-preview-image',
-	},
-	{
-		name: 'Pretelio',
-		title: 'Retail intelligence & loyalty platform',
-		description:
-			'A scalable system for dynamic pricing, localized offers, and customer engagement across multi-store retail ecosystems.',
-		background: 'seafoam',
-		variant: 'desktop',
-		href: '/work/pretelio',
-		image: pretelioImage,
-		alt: 'Pretelio retail intelligence platform preview',
 		imageClass: 'project-preview-image',
 	},
 ];

@@ -194,9 +194,13 @@ const visibleProjects = projects.slice(0, workPageSize);
 		gap: 2rem;
 		align-items: start;
 		padding: 1.5rem;
-		background: var(--card);
+		background: var(--muted);
 		border: 1px solid var(--border);
 		border-radius: 1.5rem;
+	}
+
+	:root[data-theme='dark'] .work-card {
+		background: var(--card);
 	}
 
 	.work-copy {

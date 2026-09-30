@@ -15,6 +15,8 @@ const initials = (name: string) =>
 		.join('')
 		.slice(0, 2)
 		.toUpperCase();
+
+const track = [...testimonials, ...testimonials];
 ---
 
 <section class="testimonials" id="testimonials">
@@ -23,35 +25,40 @@ const initials = (name: string) =>
 			<h2 class="testimonials-title">Loved by the teams and founders I've worked with</h2>
 		</div>
 
-		<div class="testimonials-grid">
-			{
-				testimonials.map((testimonial) => (
-					<div class="testimonial-card">
-						<div class="testimonial-quote-wrap">
-							<p class="testimonial-quote">" {testimonial.quote} "</p>
-						</div>
-						<div class="testimonial-footer">
-							{testimonial.avatar ? (
-								<Image
-									class="testimonial-avatar-photo"
-									src={testimonial.avatar}
-									alt={testimonial.name}
-									width={46}
-									height={46}
-								/>
-							) : (
-								<div class="testimonial-avatar" aria-hidden="true">
-									{initials(testimonial.name)}
+		<div class="testimonials-marquee">
+			<div class="testimonials-marquee-fade testimonials-marquee-fade--left" aria-hidden="true"></div>
+			<div class="testimonials-marquee-fade testimonials-marquee-fade--right" aria-hidden="true"></div>
+
+			<div class="testimonials-track">
+				{
+					track.map((testimonial) => (
+						<div class="testimonial-card">
+							<div class="testimonial-quote-wrap">
+								<p class="testimonial-quote">" {testimonial.quote} "</p>
+							</div>
+							<div class="testimonial-footer">
+								{testimonial.avatar ? (
+									<Image
+										class="testimonial-avatar-photo"
+										src={testimonial.avatar}
+										alt={testimonial.name}
+										width={46}
+										height={46}
+									/>
+								) : (
+									<div class="testimonial-avatar" aria-hidden="true">
+										{initials(testimonial.name)}
+									</div>
+								)}
+								<div>
+									<p class="testimonial-name">{testimonial.name}</p>
+									<p class="testimonial-company">{testimonial.company}</p>
 								</div>
-							)}
-							<div>
-								<p class="testimonial-name">{testimonial.name}</p>
-								<p class="testimonial-company">{testimonial.company}</p>
 							</div>
 						</div>
-					</div>
-				))
-			}
+					))
+				}
+			</div>
 		</div>
 
 		<div class="testimonials-stats">
@@ -74,9 +81,10 @@ const initials = (name: string) =>
 	}
 
 	.testimonials-panel {
+		--panel-pad: clamp(1.75rem, 3vw, 3.5rem);
 		background: #0f172a;
 		border-radius: 1.35rem;
-		padding: clamp(1.75rem, 3vw, 3.5rem);
+		padding: var(--panel-pad);
 		overflow: hidden;
 	}
 
@@ -94,23 +102,54 @@ const initials = (name: string) =>
 		color: #f5f7fb;
 	}
 
-	.testimonials-grid {
-		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
+	.testimonials-marquee {
+		position: relative;
+		overflow: hidden;
+		width: calc(100% + var(--panel-pad) * 2);
+		margin-left: calc(var(--panel-pad) * -1);
+		margin-right: calc(var(--panel-pad) * -1);
+	}
+
+	.testimonials-marquee-fade {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 5rem;
+		z-index: 2;
+		pointer-events: none;
+	}
+
+	.testimonials-marquee-fade--left {
+		left: 0;
+		background: linear-gradient(to right, #0f172a, transparent);
+	}
+
+	.testimonials-marquee-fade--right {
+		right: 0;
+		background: linear-gradient(to left, #0f172a, transparent);
+	}
+
+	.testimonials-track {
+		display: flex;
+		align-items: stretch;
 		gap: 1.5rem;
+		width: max-content;
+		animation: testimonials-scroll 55s linear infinite;
+	}
+
+	.testimonials-marquee:hover .testimonials-track {
+		animation-play-state: paused;
 	}
 
 	.testimonial-card {
 		display: flex;
 		flex-direction: column;
-		height: 100%;
+		flex-shrink: 0;
+		width: 21rem;
+		min-height: 16.5rem;
 		background: #ffffff;
 		border-radius: 1rem;
 		overflow: hidden;
-	}
-
-	.testimonial-card:nth-child(-n + 3) {
-		min-height: 16.5rem;
 	}
 
 	.testimonial-quote-wrap {
@@ -197,6 +236,21 @@ const initials = (name: string) =>
 		color: #a3acb9;
 	}
 
+	@keyframes testimonials-scroll {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(-50%);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.testimonials-track {
+			animation: none;
+		}
+	}
+
 	:root[data-theme='dark'] .testimonial-card {
 		background: #1e293b;
 	}
@@ -217,23 +271,18 @@ const initials = (name: string) =>
 		color: #98a2b3;
 	}
 
-	@media (max-width: 980px) {
-		.testimonials-grid {
-			grid-template-columns: repeat(2, minmax(0, 1fr));
-		}
-
-		.testimonial-card:nth-child(-n + 3) {
-			min-height: 0;
-		}
-	}
-
 	@media (max-width: 720px) {
 		.testimonials {
 			padding: 2rem 0 4rem;
 		}
 
-		.testimonials-grid {
-			grid-template-columns: 1fr;
+		.testimonial-card {
+			width: 17rem;
+			min-height: 0;
+		}
+
+		.testimonials-marquee-fade {
+			width: 2.5rem;
 		}
 
 		.testimonials-stats {

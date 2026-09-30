@@ -52,10 +52,11 @@ export const testimonials: Testimonial[] = [
 		avatar: syedAhmedAvatar,
 	},
 	{
-		name: 'Usman Ghani',
-		company: 'Sr. React Engineer at Emumba',
+		name: 'Asif Khan',
+		company: 'Sr. Solution Architect at Global Rescue LLC',
 		quote:
-			"Hassan consistently produced high-quality designs that effectively met our clients' needs. He was skilled at translating complex requirements into elegant, intuitive designs and always willing to collaborate with stakeholders. His ability to think creatively and outside the box let him produce innovative, compelling solutions that exceeded expectations.",
+			"Hassan has been a driving force of UI/UX innovation on our project for over 3 years. He grasps business requirements, drills them to the core, and delivers neat, professional designs that often exceed expectations and provide great usability. Highly dedicated, with strong project management skills. I highly recommend him as a true asset to any team.",
+		avatar: asifKhanAvatar,
 	},
 	{
 		name: 'Anns Mustafa',
@@ -72,10 +73,9 @@ export const testimonials: Testimonial[] = [
 		avatar: zunairaJavedAvatar,
 	},
 	{
-		name: 'Asif Khan',
-		company: 'Sr. Solution Architect at Global Rescue LLC',
+		name: 'Usman Ghani',
+		company: 'Sr. React Engineer at Emumba',
 		quote:
-			"Hassan has been a driving force of UI/UX innovation on our project for over 3 years. He grasps business requirements, drills them to the core, and delivers neat, professional designs that often exceed expectations and provide great usability. Highly dedicated, with strong project management skills. I highly recommend him as a true asset to any team.",
-		avatar: asifKhanAvatar,
+			"Hassan consistently produced high-quality designs that effectively met our clients' needs. He was skilled at translating complex requirements into elegant, intuitive designs and always willing to collaborate with stakeholders. His ability to think creatively and outside the box let him produce innovative, compelling solutions that exceeded expectations.",
 	},
 ];
