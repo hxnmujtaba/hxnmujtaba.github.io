@@ -124,11 +124,11 @@ const homepageProjects = homepageOrder.map((name) => projects.find((p) => p.name
 	}
 
 	.project-card .project-name {
-		color: rgba(23, 23, 23, 0.72);
+		color: var(--muted-foreground);
 	}
 
 	.project-card h2 {
-		color: #171717;
+		color: var(--card-foreground);
 	}
 
 	h1,
@@ -225,11 +225,17 @@ const homepageProjects = homepageOrder.map((name) => projects.find((p) => p.name
 		height: 100%;
 		gap: 1.5rem;
 		padding: 1.5rem;
+		background: var(--muted);
+		border: 1px solid var(--border);
 		border-radius: 1.35rem;
 		overflow: hidden;
 		transition:
 			transform 140ms ease,
 			box-shadow 140ms ease;
+	}
+
+	:root[data-theme='dark'] .project-card {
+		background: var(--card);
 	}
 
 	.project-link:hover .project-card,
@@ -240,34 +246,6 @@ const homepageProjects = homepageOrder.map((name) => projects.find((p) => p.name
 
 	.project-link:focus-visible {
 		outline-offset: 6px;
-	}
-
-	.project-card.lime {
-		background: #ffada3;
-	}
-
-	.project-card.cyan {
-		background: #8bb5c6;
-	}
-
-	.project-card.lavender {
-		background: #a9c9ff;
-	}
-
-	.project-card.mint {
-		background: #ffb5a0;
-	}
-
-	.project-card.violet {
-		background: #c3b8ff;
-	}
-
-	.project-card.sky {
-		background: #cbbcff;
-	}
-
-	.project-card.seafoam {
-		background: #a3e4c1;
 	}
 
 	.project-header {
