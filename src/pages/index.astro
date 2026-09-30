@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
+import Hero from '../components/Hero.astro';
 import Testimonials from '../components/Testimonials.astro';
 import ToolsMarquee from '../components/ToolsMarquee.astro';
 import { projects } from '../data/projects';
@@ -20,15 +21,7 @@ const homepageProjects = homepageOrder.map((name) => projects.find((p) => p.name
 		<SiteHeader />
 
 		<main id="main-content">
-			<section class="hero" id="top">
-				<div class="hero-copy">
-					<h1 class="display-title">I design complex enterprise software built for clarity at scale.</h1>
-					<p class="hero-text">
-						12+ years designing AI-enabled SaaS platforms and enterprise systems — where clarity
-						and decision-making matter more than surface aesthetics.
-					</p>
-				</div>
-			</section>
+			<Hero />
 
 			<ToolsMarquee />
 
@@ -122,15 +115,6 @@ const homepageProjects = homepageOrder.map((name) => projects.find((p) => p.name
 		text-transform: uppercase;
 	}
 
-	.hero {
-		padding: 7rem 0 6.5rem;
-	}
-
-	.hero-copy {
-		width: 100%;
-		max-width: 100%;
-	}
-
 	.eyebrow,
 	.project-name {
 		margin: 0;
@@ -153,28 +137,6 @@ const homepageProjects = homepageOrder.map((name) => projects.find((p) => p.name
 		font-weight: 800;
 		letter-spacing: -0.05em;
 		color: var(--foreground);
-	}
-
-	.hero-text,
-	.hero-note,
-	blockquote,
-	.footer-note p,
-	.footer-note a {
-		font-size: 1.2rem;
-		line-height: 1.55;
-	}
-
-	.hero-text {
-		max-width: 38rem;
-		margin: 1.5rem auto 0;
-		text-align: center;
-	}
-
-	.hero-note {
-		max-width: 40rem;
-		margin: 1rem 0 0;
-		color: var(--muted-foreground);
-		font-style: italic;
 	}
 
 	.process {
@@ -547,17 +509,8 @@ const homepageProjects = homepageOrder.map((name) => projects.find((p) => p.name
 			padding-top: 1rem;
 		}
 
-		.hero {
-			padding: 4rem 0 4.5rem;
-		}
-
 		.process {
 			padding: 3.5rem 0 4rem;
-		}
-
-		.hero-text,
-		.hero-note {
-			font-size: 1.05rem;
 		}
 
 		.project-card {
