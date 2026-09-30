@@ -6,7 +6,9 @@ import { siteConfig } from '../../config/site';
 import coverImage from '../../assets/images/case-studies/pretelio-cover.png';
 import productsImage from '../../assets/images/case-studies/pretelio-products.png';
 import pricingImage from '../../assets/images/case-studies/pretelio-pricing.png';
+import pricingImage2 from '../../assets/images/case-studies/pretelio-pricing-2.png';
 import storesImage from '../../assets/images/case-studies/pretelio-stores.png';
+import dashboardImage from '../../assets/images/case-studies/pretelio-dashboard.png';
 
 const highlights = [
 	{ label: 'Role', value: 'Senior Product Designer' },
@@ -179,6 +181,7 @@ const caseStudySchema = [
 					<ul class="outcome-list">
 						{dashboardWidgets.map((item) => <li>{item}</li>)}
 					</ul>
+					<Image class="single-image" src={dashboardImage} alt="Pretelio dashboard for retailers screen" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
 				</div>
 			</section>
 
@@ -205,6 +208,7 @@ const caseStudySchema = [
 						{pricingFeatures.map((item) => <li>{item}</li>)}
 					</ul>
 					<Image class="single-image" src={pricingImage} alt="Pretelio pricing system screen" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
+					<Image class="single-image" src={pricingImage2} alt="Pretelio create pricing rule screen" loading="lazy" decoding="async" widths={[720, 1080, 1440]} sizes="(max-width: 78rem) 100vw, 78rem" />
 				</div>
 			</section>
 
