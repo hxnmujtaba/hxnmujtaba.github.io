@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
+import Testimonials from '../components/Testimonials.astro';
 import { projects } from '../data/projects';
 
 const homepageOrder = ['GRID', 'SolarAMPs', 'GenomeX', 'Pretelio', 'Medicra365', 'SOAPsuds'];
@@ -93,6 +94,8 @@ const homepageProjects = homepageOrder.map((name) => projects.find((p) => p.name
 					</div>
 				</div>
 			</section>
+
+			<Testimonials />
 
 		</main>
 	</div>
