@@ -2,9 +2,9 @@
 import { testimonials } from '../data/testimonials';
 
 const stats = [
-	{ value: '12+', label: 'Years of experience' },
-	{ value: '10', label: 'Enterprise products shipped' },
-	{ value: '6', label: 'Client & founder testimonials' },
+	{ label: 'Years of experience', value: '12+', sub: 'across enterprise SaaS & AI systems' },
+	{ label: 'Products shipped', value: '10', sub: 'live case studies on this site' },
+	{ label: 'Client testimonials', value: '6', sub: 'from founders & teammates' },
 ];
 
 const initials = (name: string) =>
@@ -17,56 +17,70 @@ const initials = (name: string) =>
 ---
 
 <section class="testimonials" id="testimonials">
-	<div class="testimonials-header">
-		<p class="eyebrow">Testimonials</p>
-		<h2 class="testimonials-title">What people I've worked with say</h2>
-	</div>
+	<div class="testimonials-panel">
+		<div class="testimonials-header">
+			<h2 class="testimonials-title">Loved by the teams and founders I've worked with</h2>
+		</div>
 
-	<div class="testimonials-grid">
-		{
-			testimonials.map((testimonial) => (
-				<div class="testimonial-card">
-					<p class="testimonial-quote">"{testimonial.quote}"</p>
-					<div class="testimonial-footer">
-						<div class="testimonial-avatar" aria-hidden="true">
-							{initials(testimonial.name)}
+		<div class="testimonials-grid">
+			{
+				testimonials.map((testimonial) => (
+					<div class="testimonial-card">
+						<div class="testimonial-quote-wrap">
+							<p class="testimonial-quote">" {testimonial.quote} "</p>
 						</div>
-						<div>
-							<p class="testimonial-name">{testimonial.name}</p>
-							<p class="testimonial-company">{testimonial.company}</p>
+						<div class="testimonial-footer">
+							<div class="testimonial-avatar" aria-hidden="true">
+								{initials(testimonial.name)}
+							</div>
+							<div>
+								<p class="testimonial-name">{testimonial.name}</p>
+								<p class="testimonial-company">{testimonial.company}</p>
+							</div>
 						</div>
 					</div>
-				</div>
-			))
-		}
-	</div>
+				))
+			}
+		</div>
 
-	<div class="testimonials-stats">
-		{
-			stats.map((stat) => (
-				<div class="stat">
-					<p class="stat-value">{stat.value}</p>
-					<p class="stat-label">{stat.label}</p>
-				</div>
-			))
-		}
+		<div class="testimonials-stats">
+			{
+				stats.map((stat) => (
+					<div class="stat">
+						<h3 class="stat-label">{stat.label}</h3>
+						<p class="stat-value">{stat.value}</p>
+						<p class="stat-sub">{stat.sub}</p>
+					</div>
+				))
+			}
+		</div>
 	</div>
 </section>
 
 <style>
 	.testimonials {
-		padding: 5rem 0 6rem;
+		padding: 3rem 0 6rem;
+	}
+
+	.testimonials-panel {
+		background: #0f172a;
+		border-radius: 1.35rem;
+		padding: clamp(1.75rem, 3vw, 3.5rem);
+		overflow: hidden;
 	}
 
 	.testimonials-header {
-		max-width: 42rem;
-		margin: 0 auto 2.75rem;
-		text-align: center;
+		max-width: 34rem;
+		margin: 0 0 2.5rem;
 	}
 
 	.testimonials-title {
-		margin: 0.5rem 0 0;
-		font-size: clamp(1.85rem, 2.4vw, 2.35rem);
+		margin: 0;
+		font-size: clamp(1.75rem, 2.6vw, 2.35rem);
+		font-weight: 700;
+		line-height: 1.15;
+		letter-spacing: -0.03em;
+		color: #f5f7fb;
 	}
 
 	.testimonials-grid {
@@ -79,39 +93,41 @@ const initials = (name: string) =>
 		display: flex;
 		flex-direction: column;
 		height: 100%;
-		padding: 1.5rem;
-		background: var(--card);
-		border: 1px solid var(--border);
-		border-radius: 1.25rem;
-		box-shadow: var(--shadow-soft);
+		background: #ffffff;
+		border-radius: 1rem;
+		overflow: hidden;
+	}
+
+	.testimonial-quote-wrap {
+		flex: 1;
+		padding: 1.25rem 1.5rem;
 	}
 
 	.testimonial-quote {
-		flex: 1;
-		margin: 0 0 1.5rem;
+		margin: 0;
 		font-size: 1rem;
-		line-height: 1.6;
-		color: var(--foreground);
+		font-style: italic;
+		line-height: 1.55;
+		color: #171717;
 	}
 
 	.testimonial-footer {
 		display: flex;
 		align-items: center;
 		gap: 0.75rem;
-		padding-top: 1.25rem;
-		border-top: 1px solid var(--border);
+		padding: 1rem 1.5rem;
+		background: #f5f5f5;
 	}
 
 	.testimonial-avatar {
 		flex-shrink: 0;
 		display: grid;
 		place-items: center;
-		width: 2.75rem;
-		height: 2.75rem;
+		width: 2.875rem;
+		height: 2.875rem;
 		border-radius: 50%;
-		background: var(--muted);
-		color: var(--foreground);
-		font-family: var(--font-mono);
+		background: #dbe2ea;
+		color: #171717;
 		font-size: 0.85rem;
 		font-weight: 700;
 	}
@@ -120,38 +136,42 @@ const initials = (name: string) =>
 		margin: 0;
 		font-size: 0.95rem;
 		font-weight: 700;
-		letter-spacing: -0.02em;
-		color: var(--foreground);
+		letter-spacing: -0.01em;
+		color: #171717;
 	}
 
 	.testimonial-company {
-		margin: 0.15rem 0 0;
-		font-size: 0.85rem;
-		color: var(--muted-foreground);
+		margin: 0.1rem 0 0;
+		font-size: 0.8rem;
+		color: #676767;
 	}
 
 	.testimonials-stats {
+		margin-top: clamp(2.5rem, 4vw, 5rem);
 		display: grid;
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 		gap: 2rem;
-		margin-top: 3.5rem;
-		padding-top: 3rem;
-		border-top: 1px solid var(--border);
-		text-align: center;
-	}
-
-	.stat-value {
-		margin: 0;
-		font-size: clamp(2.25rem, 4vw, 3.25rem);
-		font-weight: 800;
-		letter-spacing: -0.04em;
-		color: var(--accent-link);
 	}
 
 	.stat-label {
-		margin: 0.4rem 0 0;
+		margin: 0;
+		font-size: 1.15rem;
+		font-weight: 600;
+		color: #ffffff;
+	}
+
+	.stat-value {
+		margin: 0.5rem 0 0;
+		font-size: clamp(2.5rem, 4.5vw, 3.75rem);
+		font-weight: 700;
+		letter-spacing: -0.02em;
+		color: #3b82f6;
+	}
+
+	.stat-sub {
+		margin: 0.25rem 0 0;
 		font-size: 0.95rem;
-		color: var(--muted-foreground);
+		color: #a3acb9;
 	}
 
 	@media (max-width: 980px) {
@@ -162,7 +182,7 @@ const initials = (name: string) =>
 
 	@media (max-width: 720px) {
 		.testimonials {
-			padding: 3.5rem 0 4rem;
+			padding: 2rem 0 4rem;
 		}
 
 		.testimonials-grid {
@@ -172,8 +192,6 @@ const initials = (name: string) =>
 		.testimonials-stats {
 			grid-template-columns: 1fr;
 			gap: 1.75rem;
-			margin-top: 2.5rem;
-			padding-top: 2rem;
 		}
 	}
 </style>
