@@ -89,7 +89,11 @@ const menuPanelId = 'shared-menu-panel';
 			</summary>
 
 			<nav class="shared-mobile-panel" aria-label="Mobile">
-				{siteConfig.navLinks.map((link) => <a href={link.href}>{link.label}</a>)}
+				{siteConfig.navLinks.map((link) => (
+					<a href={link.href} aria-current={link.href === currentPath ? 'page' : undefined}>
+						{link.label}
+					</a>
+				))}
 
 				<details class="shared-mobile-submenu">
 					<summary class="shared-mobile-submenu-trigger">

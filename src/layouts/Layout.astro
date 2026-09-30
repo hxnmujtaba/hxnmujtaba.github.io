@@ -92,10 +92,7 @@ const schemaData =
 				const storageKey = 'maria-theme';
 				const root = document.documentElement;
 				const storedTheme = localStorage.getItem(storageKey);
-				const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
-					? 'dark'
-					: 'light';
-				root.dataset.theme = storedTheme === 'dark' || storedTheme === 'light' ? storedTheme : systemTheme;
+				root.dataset.theme = storedTheme === 'dark' || storedTheme === 'light' ? storedTheme : 'dark';
 			})();
 		</script>
 	</head>
@@ -128,15 +125,6 @@ const schemaData =
 					const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
 					localStorage.setItem(storageKey, nextTheme);
 					applyTheme(nextTheme);
-				});
-
-				const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-				mediaQuery.addEventListener('change', (event) => {
-					if (localStorage.getItem(storageKey)) {
-						return;
-					}
-
-					applyTheme(event.matches ? 'dark' : 'light');
 				});
 			})();
 		</script>
@@ -389,6 +377,10 @@ const schemaData =
 		opacity: 0.68;
 	}
 
+	.shared-nav a[aria-current='page'] {
+		color: var(--accent-link);
+	}
+
 	.shared-menu-panel {
 		position: absolute;
 		top: calc(100% - 0.1rem);
@@ -552,6 +544,10 @@ const schemaData =
 	.shared-mobile-submenu-trigger:hover,
 	.shared-mobile-submenu-trigger:focus-visible {
 		background: var(--muted);
+	}
+
+	.shared-mobile-panel a[aria-current='page'] {
+		color: var(--accent-link);
 	}
 
 	.shared-mobile-submenu-trigger {
