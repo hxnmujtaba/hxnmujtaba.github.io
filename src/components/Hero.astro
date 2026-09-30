@@ -1,15 +1,54 @@
 ---
+import { Image } from 'astro:assets';
+import heroPhoto from '../assets/images/hero/mine-hero.png';
 ---
 
 <section class="hero-accent" id="top">
 	<div class="hero-accent-inner">
-		<div class="hero-pill-row">
-			<a class="hero-pill" href="/resume">
-				12+ Years of Enterprise Product Design
-				<span class="hero-pill-divider">
-					<span class="hero-pill-link">Resume</span>
+		<div class="hero-accent-copy">
+			<div class="hero-pill-row">
+				<a class="hero-pill" href="/resume">
+					12+ Years of Enterprise Product Design
+					<span class="hero-pill-divider">
+						<span class="hero-pill-link">Resume</span>
+						<svg
+							class="hero-pill-chevron"
+							width="16"
+							height="16"
+							viewBox="0 0 16 16"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M6 4L10 8L6 12"
+								stroke="currentColor"
+								stroke-width="1.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+						</svg>
+					</span>
+				</a>
+			</div>
+
+			<div class="hero-accent-title-wrap">
+				<h1 class="hero-accent-title">
+					I design complex enterprise software built for clarity at scale.
+				</h1>
+			</div>
+
+			<div class="hero-accent-text-wrap">
+				<p class="hero-accent-text">
+					12+ years designing AI-enabled SaaS platforms and enterprise systems — where clarity
+					and decision-making matter more than surface aesthetics.
+				</p>
+			</div>
+
+			<div class="hero-accent-actions">
+				<a class="hero-cta" href="/work">
+					View My Work
 					<svg
-						class="hero-pill-chevron"
+						class="hero-cta-chevron"
 						width="16"
 						height="16"
 						viewBox="0 0 16 16"
@@ -24,43 +63,12 @@
 							stroke-linejoin="round"
 						/>
 					</svg>
-				</span>
-			</a>
+				</a>
+			</div>
 		</div>
 
-		<div class="hero-accent-title-wrap">
-			<h1 class="hero-accent-title">
-				I design complex enterprise software built for clarity at scale.
-			</h1>
-		</div>
-
-		<div class="hero-accent-text-wrap">
-			<p class="hero-accent-text">
-				12+ years designing AI-enabled SaaS platforms and enterprise systems — where clarity
-				and decision-making matter more than surface aesthetics.
-			</p>
-		</div>
-
-		<div class="hero-accent-actions">
-			<a class="hero-cta" href="/work">
-				View My Work
-				<svg
-					class="hero-cta-chevron"
-					width="16"
-					height="16"
-					viewBox="0 0 16 16"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path
-						d="M6 4L10 8L6 12"
-						stroke="currentColor"
-						stroke-width="1.5"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-					/>
-				</svg>
-			</a>
+		<div class="hero-accent-media">
+			<Image class="hero-accent-photo" src={heroPhoto} alt="Hassan Mujtaba" width={480} height={520} priority />
 		</div>
 	</div>
 </section>
@@ -83,6 +91,7 @@
 		background-image: url('/images/hero/squared-bg-element.svg');
 		background-repeat: no-repeat;
 		background-position: top center;
+		background-size: cover;
 		z-index: -1;
 	}
 
@@ -92,13 +101,18 @@
 
 	.hero-accent-inner {
 		display: flex;
-		flex-direction: column;
 		align-items: center;
+		gap: 3rem;
+	}
+
+	.hero-accent-copy {
+		flex: 1 1 55%;
+		min-width: 0;
 	}
 
 	.hero-pill-row {
 		display: flex;
-		justify-content: center;
+		justify-content: flex-start;
 	}
 
 	.hero-pill {
@@ -136,14 +150,14 @@
 	}
 
 	.hero-accent-title-wrap {
-		max-width: 42rem;
-		margin: 1.5rem auto 0;
-		text-align: center;
+		max-width: 34rem;
+		margin: 1.5rem 0 0;
+		text-align: left;
 	}
 
 	.hero-accent-title {
 		margin: 0;
-		font-size: clamp(2.5rem, 5vw, 4rem);
+		font-size: clamp(2.25rem, 4vw, 3.5rem);
 		font-weight: 800;
 		line-height: 1.05;
 		letter-spacing: -0.04em;
@@ -151,9 +165,9 @@
 	}
 
 	.hero-accent-text-wrap {
-		max-width: 38rem;
-		margin: 1.5rem auto 0;
-		text-align: center;
+		max-width: 32rem;
+		margin: 1.5rem 0 0;
+		text-align: left;
 	}
 
 	.hero-accent-text {
@@ -165,7 +179,7 @@
 
 	.hero-accent-actions {
 		display: flex;
-		justify-content: center;
+		justify-content: flex-start;
 		gap: 0.75rem;
 		margin-top: 2rem;
 	}
@@ -194,6 +208,47 @@
 
 	.hero-cta-chevron {
 		flex-shrink: 0;
+	}
+
+	.hero-accent-media {
+		flex: 1 1 45%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.hero-accent-photo {
+		width: 100%;
+		max-width: 24rem;
+		height: auto;
+	}
+
+	@media (max-width: 900px) {
+		.hero-accent-inner {
+			flex-direction: column-reverse;
+			gap: 2rem;
+		}
+
+		.hero-accent-copy,
+		.hero-accent-media {
+			flex: 1 1 auto;
+			width: 100%;
+		}
+
+		.hero-accent-media {
+			max-width: 18rem;
+			margin: 0 auto;
+		}
+
+		.hero-pill-row,
+		.hero-accent-title-wrap,
+		.hero-accent-text-wrap,
+		.hero-accent-actions {
+			justify-content: center;
+			text-align: center;
+			margin-left: auto;
+			margin-right: auto;
+		}
 	}
 
 	@media (max-width: 720px) {

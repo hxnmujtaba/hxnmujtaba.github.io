@@ -30,6 +30,7 @@ const track = [...tools, ...tools];
 		right: 50%;
 		margin-left: -50vw;
 		margin-right: -50vw;
+		margin-bottom: 3rem;
 		overflow: hidden;
 		padding: 1.5rem 0;
 		background: var(--muted);
@@ -74,12 +75,12 @@ const track = [...tools, ...tools];
 	.tool-icon {
 		width: 1.6rem;
 		height: 1.6rem;
-		filter: grayscale(100%) opacity(0.55);
-		transition: filter 160ms ease;
+		opacity: 0.75;
+		transition: opacity 160ms ease;
 	}
 
 	.tool-item:hover .tool-icon {
-		filter: grayscale(0%) opacity(1);
+		opacity: 1;
 	}
 
 	.tool-name {
@@ -113,6 +114,7 @@ const track = [...tools, ...tools];
 	@media (max-width: 720px) {
 		.tools-marquee {
 			padding: 1.15rem 0;
+			margin-bottom: 2rem;
 		}
 
 		.tool-item {
